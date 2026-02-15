@@ -1,5 +1,8 @@
-# Disable directory browsing
+﻿# Disable directory browsing
 Options -Indexes
+
+# Default charset
+AddDefaultCharset UTF-8
 
 # ----------------------------------------------------------------------
 # Rewrite engine
