@@ -210,6 +210,69 @@
                 return String(value);
             }
 
+            function toNumber(value) {
+                if (value === '' || value === null || value === undefined) {
+                    return NaN;
+                }
+                return Number(String(value).replace(',', '.'));
+            }
+
+            function getPriceData(product) {
+                const originalValue = pick(product, ['preco', 'valor', 'price']);
+                const discountValue = pick(product, ['desconto', 'discount']);
+
+                const originalNumber = toNumber(originalValue);
+                const discountNumber = toNumber(discountValue);
+
+                if (Number.isNaN(originalNumber)) {
+                    return {
+                        originalText: '',
+                        finalText: '',
+                        hasDiscount: false,
+                    };
+                }
+
+                const hasDiscount = !Number.isNaN(discountNumber) && discountNumber > 0;
+                const discountPercent = hasDiscount ? Math.min(discountNumber, 100) : 0;
+                const finalNumber = hasDiscount ? originalNumber * (1 - discountPercent / 100) : originalNumber;
+
+                return {
+                    originalText: formatPrice(originalNumber),
+                    finalText: formatPrice(finalNumber),
+                    hasDiscount,
+                };
+            }
+
+            function isRecentlyCreated(product, days = 30) {
+                const createdAtRaw = pick(product, ['created_at', 'createdAt', 'data_cadastro']);
+                if (!createdAtRaw) {
+                    return false;
+                }
+
+                const normalized = String(createdAtRaw).replace(' ', 'T');
+                const createdAt = new Date(normalized);
+                if (Number.isNaN(createdAt.getTime())) {
+                    return false;
+                }
+
+                const diffMs = Date.now() - createdAt.getTime();
+                return diffMs >= 0 && diffMs <= days * 24 * 60 * 60 * 1000;
+            }
+
+            function formatDiscountBadge(value) {
+                if (value === '' || value === null || value === undefined) {
+                    return '';
+                }
+
+                const numeric = Number(String(value).replace(',', '.'));
+                if (Number.isNaN(numeric) || numeric <= 0) {
+                    return '';
+                }
+
+                const numberText = Number.isInteger(numeric) ? String(numeric) : numeric.toFixed(2).replace('.', ',');
+                return `${numberText}% OFF!`;
+            }
+
             function collectProductImages(product) {
                 const imageUrls = [];
 
@@ -240,18 +303,41 @@
                 const title = pick(product, ['nome', 'titulo', 'title', 'name']) || `Produto ${index + 1}`;
                 const productId = pick(product, ['id', 'produto_id']);
                 const status = String(pick(product, ['status'])).toLowerCase();
+                const isNew = isRecentlyCreated(product);
+                const discountBadgeText = formatDiscountBadge(pick(product, ['desconto', 'discount']));
                 const description = pick(product, ['descricao', 'description']);
-                const price = formatPrice(pick(product, ['preco', 'valor', 'price']));
+                const priceData = getPriceData(product);
                 const imageUrls = collectProductImages(product);
 
                 const cardEl = document.createElement('article');
                 cardEl.className = 'product-card';
 
+                const badgesEl = document.createElement('div');
+                badgesEl.className = 'product-badges';
+
                 if (status === 'vendido') {
                     const soldBadgeEl = document.createElement('span');
                     soldBadgeEl.className = 'product-badge-sold';
                     soldBadgeEl.textContent = 'VENDIDO';
-                    cardEl.appendChild(soldBadgeEl);
+                    badgesEl.appendChild(soldBadgeEl);
+                }
+
+                if (isNew) {
+                    const newBadgeEl = document.createElement('span');
+                    newBadgeEl.className = 'product-badge-new';
+                    newBadgeEl.textContent = 'NOVO!';
+                    badgesEl.appendChild(newBadgeEl);
+                }
+
+                if (discountBadgeText) {
+                    const discountBadgeEl = document.createElement('span');
+                    discountBadgeEl.className = 'product-badge-discount';
+                    discountBadgeEl.textContent = discountBadgeText;
+                    badgesEl.appendChild(discountBadgeEl);
+                }
+
+                if (badgesEl.childElementCount > 0) {
+                    cardEl.appendChild(badgesEl);
                 }
 
                 if (imageUrls.length > 0) {
@@ -289,11 +375,23 @@
                     bodyEl.appendChild(descEl);
                 }
 
-                if (price) {
-                    const priceEl = document.createElement('p');
-                    priceEl.className = 'product-price';
-                    priceEl.textContent = price;
-                    bodyEl.appendChild(priceEl);
+                if (priceData.finalText) {
+                    if (priceData.hasDiscount) {
+                        const originalPriceEl = document.createElement('p');
+                        originalPriceEl.className = 'product-price-original';
+                        originalPriceEl.textContent = priceData.originalText;
+                        bodyEl.appendChild(originalPriceEl);
+
+                        const finalPriceEl = document.createElement('p');
+                        finalPriceEl.className = 'product-price';
+                        finalPriceEl.textContent = priceData.finalText;
+                        bodyEl.appendChild(finalPriceEl);
+                    } else {
+                        const priceEl = document.createElement('p');
+                        priceEl.className = 'product-price';
+                        priceEl.textContent = priceData.finalText;
+                        bodyEl.appendChild(priceEl);
+                    }
                 }
 
                 const whatsappMessage = `Olá! Tenho interesse no produto ${title} id${productId}`;

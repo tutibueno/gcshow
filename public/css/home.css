@@ -197,11 +197,19 @@ body {
     scroll-snap-align: start;
 }
 
-.product-badge-sold {
+.product-badges {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-badge-sold,
+.product-badge-new,
+.product-badge-discount {
     background: #dc2626;
     color: #ffffff;
     font-size: 11px;
@@ -209,6 +217,16 @@ body {
     letter-spacing: 0.04em;
     padding: 6px 10px;
     border-radius: 999px;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.product-badge-new {
+    background: #2563eb;
+}
+
+.product-badge-discount {
+    background: #16a34a;
 }
 
 .product-images {
@@ -251,6 +269,13 @@ body {
     margin: 0;
     font-weight: 700;
     color: #0f766e;
+}
+
+.product-price-original {
+    margin: 0 0 4px;
+    color: #6b7280;
+    text-decoration: line-through;
+    font-size: 14px;
 }
 
 .product-whatsapp {
