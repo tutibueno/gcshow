@@ -239,12 +239,20 @@
             function createCard(product, index) {
                 const title = pick(product, ['nome', 'titulo', 'title', 'name']) || `Produto ${index + 1}`;
                 const productId = pick(product, ['id', 'produto_id']);
+                const status = String(pick(product, ['status'])).toLowerCase();
                 const description = pick(product, ['descricao', 'description']);
                 const price = formatPrice(pick(product, ['preco', 'valor', 'price']));
                 const imageUrls = collectProductImages(product);
 
                 const cardEl = document.createElement('article');
                 cardEl.className = 'product-card';
+
+                if (status === 'vendido') {
+                    const soldBadgeEl = document.createElement('span');
+                    soldBadgeEl.className = 'product-badge-sold';
+                    soldBadgeEl.textContent = 'VENDIDO';
+                    cardEl.appendChild(soldBadgeEl);
+                }
 
                 if (imageUrls.length > 0) {
                     const imagesWrapEl = document.createElement('div');
