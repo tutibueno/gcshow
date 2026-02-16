@@ -1,5 +1,6 @@
 ﻿<!doctype html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <link rel="manifest" href="<?= base_url($assetPrefix . 'site.webmanifest') ?>">
     <link rel="stylesheet" href="<?= base_url($assetPrefix . 'css/home.css') ?>">
 </head>
+
 <body>
     <header class="site-header">
         <img class="site-logo" src="<?= base_url($assetPrefix . 'logo.png') ?>" alt="Games Collection Show">
@@ -74,8 +76,7 @@
                             <img
                                 src="<?= esc(base_url($assetPrefix . 'uploads/galeria/' . rawurlencode($imageName))) ?>"
                                 alt="Foto da galeria <?= $index + 1 ?>"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                         </figure>
                     <?php endforeach; ?>
                 </div>
@@ -92,11 +93,16 @@
     </main>
 
     <footer class="site-footer">
-        Games Collection Show - Todos os Direitos Reservados
+        &copy; <?= date('Y') ?> Game Collection Show
+        <p>
+        <a href="https://www.instagram.com/wilmerseventos/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram Wilmers Eventos</a> |
+        <a href="https://www.facebook.com/profile.php?id=61557788171224" target="_blank" style="color: #ccc; text-decoration: underline;">Facebook</a> |
+        <a href="https://www.instagram.com/gamecollectionshow/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram</a>
+        </p>
     </footer>
 
     <script>
-        (function () {
+        (function() {
             const productsUrl = '<?= base_url($assetPrefix . 'produtos.json') ?>';
             const siteBaseUrl = '<?= base_url() ?>';
             const uploadsBaseUrl = '<?= base_url($assetPrefix . 'uploads/') ?>';
@@ -162,7 +168,10 @@
                 const numeric = Number(String(value).replace(',', '.'));
 
                 if (!Number.isNaN(numeric)) {
-                    return numeric.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    return numeric.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    });
                 }
 
                 return String(value);
@@ -291,4 +300,5 @@
         })();
     </script>
 </body>
+
 </html>
