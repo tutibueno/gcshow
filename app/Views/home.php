@@ -12,6 +12,7 @@
     <link rel="icon" type="image/x-icon" href="<?= base_url($assetPrefix . 'favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= base_url($assetPrefix . 'favicon.ico') ?>">
     <link rel="manifest" href="<?= base_url($assetPrefix . 'site.webmanifest') ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="<?= base_url($assetPrefix . 'css/home.css') ?>">
 </head>
 
@@ -55,9 +56,10 @@
             <p>Conteúdo temporário: em breve publicaremos o calendário oficial com datas de exposições, encontros de colecionadores e lançamentos especiais.</p>
             <p>Próximos destaques (prévia):</p>
             <ul>
-                <li>Março: Encontro Retro Games</li>
-                <li>Abril: Mostra de Consoles Clássicos</li>
-                <li>Maio: Feira de Trocas e Produtos</li>
+                <li>Março: Game Collection Show - Jabaquara</li>
+                <li>Abril: Game Collection Show - Jabaquara</li>
+                <li>Maio: Super Game Collection Show - Liberdade</li>
+                <li>Junho: Evento Canal 3 - São Paulo</li>
             </ul>
         </section>
 
@@ -100,11 +102,11 @@
     </main>
 
     <footer class="site-footer">
-        &copy; <?= date('Y') ?> Game Collection Show
+        &copy; <?= date('Y') ?> <strong>Game Collection Show</strong>
         <p>
-        <a href="https://www.instagram.com/wilmerseventos/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram Wilmers Eventos</a> |
-        <a href="https://www.facebook.com/profile.php?id=61557788171224" target="_blank" style="color: #ccc; text-decoration: underline;">Facebook</a> |
-        <a href="https://www.instagram.com/gamecollectionshow/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram</a>
+            <a href="https://www.instagram.com/wilmerseventos/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram Wilmers Eventos</a> |
+            <a href="https://www.facebook.com/profile.php?id=61557788171224" target="_blank" style="color: #ccc; text-decoration: underline;">Facebook</a> |
+            <a href="https://www.instagram.com/gamecollectionshow/" target="_blank" style="color: #ccc; text-decoration: underline;">Instagram</a>
         </p>
     </footer>
 
@@ -402,7 +404,15 @@
                 whatsappLinkEl.href = whatsappUrl;
                 whatsappLinkEl.target = '_blank';
                 whatsappLinkEl.rel = 'noopener noreferrer';
-                whatsappLinkEl.textContent = 'Contato no WhatsApp';
+                const whatsappIconEl = document.createElement('i');
+                whatsappIconEl.className = 'fa-brands fa-whatsapp';
+                whatsappIconEl.setAttribute('aria-hidden', 'true');
+
+                const whatsappTextEl = document.createElement('span');
+                whatsappTextEl.textContent = 'Falar com o Vendedor';
+
+                whatsappLinkEl.appendChild(whatsappIconEl);
+                whatsappLinkEl.appendChild(whatsappTextEl);
                 bodyEl.appendChild(whatsappLinkEl);
 
                 cardEl.appendChild(bodyEl);
