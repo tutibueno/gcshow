@@ -18,10 +18,10 @@
         <img class="site-logo" src="<?= base_url($assetPrefix . 'logo.png') ?>" alt="Games Collection Show">
         <nav aria-label="Menu principal">
             <ul class="site-menu">
-                <li><a href="#noticias">Últimas Notícias</a></li>
+                <li><a href="#noticias">Notícias</a></li>
                 <li><a href="#agenda">Agenda</a></li>
-                <li><a href="#galeria">Galeria de Fotos</a></li>
-                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#produtos">Vendas</a></li>
             </ul>
         </nav>
     </header>
@@ -54,15 +54,241 @@
 
         <section class="content-section" id="galeria">
             <h2 class="section-title">Galeria de Fotos</h2>
+            <?php
+            $galleryDir   = FCPATH . $assetPrefix . 'uploads/galeria/';
+            $galleryFiles = [];
+
+            if (is_dir($galleryDir)) {
+                $galleryFiles = glob($galleryDir . '*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', GLOB_BRACE) ?: [];
+                $galleryFiles = array_map('basename', $galleryFiles);
+                sort($galleryFiles, SORT_NATURAL | SORT_FLAG_CASE);
+            }
+            ?>
+
+            <?php if ($galleryFiles === []): ?>
+                <p>Sem fotos no momento.</p>
+            <?php else: ?>
+                <div class="gallery-carousel" aria-label="Carrossel de fotos da galeria">
+                    <?php foreach ($galleryFiles as $index => $imageName): ?>
+                        <figure class="gallery-slide">
+                            <img
+                                src="<?= esc(base_url($assetPrefix . 'uploads/galeria/' . rawurlencode($imageName))) ?>"
+                                alt="Foto da galeria <?= $index + 1 ?>"
+                                loading="lazy"
+                            >
+                        </figure>
+                    <?php endforeach; ?>
+                </div>
+                <p class="gallery-hint">Arraste para o lado para ver mais fotos.</p>
+            <?php endif; ?>
         </section>
 
         <section class="content-section" id="produtos">
-            <h2 class="section-title">Produtos</h2>
+            <h2 class="section-title">Vendas de Produtos</h2>
+            <div class="products-carousel" id="productsCarousel" aria-label="Carrossel de produtos"></div>
+            <p class="products-feedback" id="productsFeedback">Carregando produtos...</p>
+            <p class="gallery-hint">Arraste para o lado para ver mais produtos.</p>
         </section>
     </main>
 
     <footer class="site-footer">
         Games Collection Show - Todos os Direitos Reservados
     </footer>
+
+    <script>
+        (function () {
+            const productsUrl = '<?= base_url($assetPrefix . 'produtos.json') ?>';
+            const siteBaseUrl = '<?= base_url() ?>';
+            const uploadsBaseUrl = '<?= base_url($assetPrefix . 'uploads/') ?>';
+            const carouselEl = document.getElementById('productsCarousel');
+            const feedbackEl = document.getElementById('productsFeedback');
+
+            function asArray(payload) {
+                if (Array.isArray(payload)) {
+                    return payload;
+                }
+
+                if (payload && Array.isArray(payload.data)) {
+                    return payload.data;
+                }
+
+                if (payload && Array.isArray(payload.produtos)) {
+                    return payload.produtos;
+                }
+
+                return [];
+            }
+
+            function pick(product, keys) {
+                for (const key of keys) {
+                    if (product[key] !== undefined && product[key] !== null && product[key] !== '') {
+                        return product[key];
+                    }
+                }
+                return '';
+            }
+
+            function toImageUrl(value, fromUploads = false) {
+                if (!value) {
+                    return '';
+                }
+
+                const raw = String(value).trim();
+
+                if (/^https?:\/\//i.test(raw)) {
+                    return raw;
+                }
+
+                try {
+                    if (raw.includes('uploads/')) {
+                        return new URL(raw.replace(/^public\//, ''), siteBaseUrl).href;
+                    }
+
+                    if (fromUploads) {
+                        return new URL(raw, uploadsBaseUrl).href;
+                    }
+
+                    return new URL(raw, siteBaseUrl).href;
+                } catch (error) {
+                    return '';
+                }
+            }
+
+            function formatPrice(value) {
+                if (value === '' || value === null || value === undefined) {
+                    return '';
+                }
+
+                const numeric = Number(String(value).replace(',', '.'));
+
+                if (!Number.isNaN(numeric)) {
+                    return numeric.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                }
+
+                return String(value);
+            }
+
+            function collectProductImages(product) {
+                const imageUrls = [];
+
+                if (product && Array.isArray(product.imagens)) {
+                    product.imagens
+                        .slice()
+                        .sort((a, b) => Number(a.ordem ?? 0) - Number(b.ordem ?? 0))
+                        .forEach((imageItem) => {
+                            const uri = imageItem && imageItem.uri ? String(imageItem.uri).trim() : '';
+                            const fromFile = imageItem && imageItem.imagem ? toImageUrl(imageItem.imagem, true) : '';
+                            const finalUrl = uri || fromFile;
+
+                            if (finalUrl && !imageUrls.includes(finalUrl)) {
+                                imageUrls.push(finalUrl);
+                            }
+                        });
+                }
+
+                const fallbackSingle = toImageUrl(pick(product, ['imagem', 'foto', 'image', 'thumbnail']));
+                if (fallbackSingle && !imageUrls.includes(fallbackSingle)) {
+                    imageUrls.push(fallbackSingle);
+                }
+
+                return imageUrls;
+            }
+
+            function createCard(product, index) {
+                const title = pick(product, ['nome', 'titulo', 'title', 'name']) || `Produto ${index + 1}`;
+                const productId = pick(product, ['id', 'produto_id']);
+                const description = pick(product, ['descricao', 'description']);
+                const price = formatPrice(pick(product, ['preco', 'valor', 'price']));
+                const imageUrls = collectProductImages(product);
+
+                const cardEl = document.createElement('article');
+                cardEl.className = 'product-card';
+
+                if (imageUrls.length > 0) {
+                    const imagesWrapEl = document.createElement('div');
+                    imagesWrapEl.className = 'product-images';
+
+                    const imagesTrackEl = document.createElement('div');
+                    imagesTrackEl.className = 'product-images-track';
+
+                    imageUrls.forEach((url, imageIndex) => {
+                        const imageEl = document.createElement('img');
+                        imageEl.className = 'product-image';
+                        imageEl.src = url;
+                        imageEl.alt = `${title} - imagem ${imageIndex + 1}`;
+                        imageEl.loading = 'lazy';
+                        imagesTrackEl.appendChild(imageEl);
+                    });
+
+                    imagesWrapEl.appendChild(imagesTrackEl);
+                    cardEl.appendChild(imagesWrapEl);
+                }
+
+                const bodyEl = document.createElement('div');
+                bodyEl.className = 'product-body';
+
+                const titleEl = document.createElement('h3');
+                titleEl.className = 'product-title';
+                titleEl.textContent = title;
+                bodyEl.appendChild(titleEl);
+
+                if (description) {
+                    const descEl = document.createElement('p');
+                    descEl.className = 'product-description';
+                    descEl.textContent = description;
+                    bodyEl.appendChild(descEl);
+                }
+
+                if (price) {
+                    const priceEl = document.createElement('p');
+                    priceEl.className = 'product-price';
+                    priceEl.textContent = price;
+                    bodyEl.appendChild(priceEl);
+                }
+
+                const whatsappMessage = `Olá! Tenho interesse no produto ${title} id${productId}`;
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=551199602001&text=${encodeURIComponent(whatsappMessage)}`;
+
+                const whatsappLinkEl = document.createElement('a');
+                whatsappLinkEl.className = 'product-whatsapp';
+                whatsappLinkEl.href = whatsappUrl;
+                whatsappLinkEl.target = '_blank';
+                whatsappLinkEl.rel = 'noopener noreferrer';
+                whatsappLinkEl.textContent = 'Contato no WhatsApp';
+                bodyEl.appendChild(whatsappLinkEl);
+
+                cardEl.appendChild(bodyEl);
+
+                return cardEl;
+            }
+
+            fetch(productsUrl)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then((payload) => {
+                    const products = asArray(payload);
+
+                    if (products.length === 0) {
+                        feedbackEl.textContent = 'Nenhum produto encontrado para exibir.';
+                        return;
+                    }
+
+                    const fragment = document.createDocumentFragment();
+                    products.forEach((product, index) => {
+                        fragment.appendChild(createCard(product, index));
+                    });
+
+                    carouselEl.appendChild(fragment);
+                    feedbackEl.textContent = '';
+                })
+                .catch(() => {
+                    feedbackEl.textContent = 'Não foi possível carregar os produtos do arquivo JSON no momento.';
+                });
+        })();
+    </script>
 </body>
 </html>

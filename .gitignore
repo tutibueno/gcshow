@@ -124,3 +124,7 @@ _modules/*
 
 /results/
 /phpunit*.xml
+
+# Diretório de upload
+public/uploads/*
+!public/uploads/.gitkeep

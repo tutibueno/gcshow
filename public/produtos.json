@@ -1,0 +1,819 @@
+{
+    "total": 8,
+    "produtos": [
+        {
+            "id": "1",
+            "titulo": "Super Nintendo SNES",
+            "descricao": "Super Nintendo!",
+            "link_youtube": null,
+            "preco": "1500.00",
+            "desconto": "20.00",
+            "flag_ativo": "1",
+            "status": "vendido",
+            "tipo_destaque": "primeira_pagina",
+            "tags": "nintendo, nes, nintendo",
+            "visualizacoes": "24",
+            "created_at": "2025-09-15 19:22:12",
+            "updated_at": "2025-09-06 15:55:10",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "24",
+                    "produto_id": "1",
+                    "imagem": "1757982668_fdb1572d2b961c89a854.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_fdb1572d2b961c89a854.webp"
+                },
+                {
+                    "id": "41",
+                    "produto_id": "1",
+                    "imagem": "1757989100_a0ae358917c8f44ad9ef.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-15 23:18:20",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757989100_a0ae358917c8f44ad9ef.webp"
+                },
+                {
+                    "id": "5",
+                    "produto_id": "1",
+                    "imagem": "1757975788_96eedcd70a3f4cff5891.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-15 19:36:28",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757975788_96eedcd70a3f4cff5891.webp"
+                },
+                {
+                    "id": "23",
+                    "produto_id": "1",
+                    "imagem": "1757982668_50d9e97cb11c18ee42ca.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_50d9e97cb11c18ee42ca.webp"
+                },
+                {
+                    "id": "29",
+                    "produto_id": "1",
+                    "imagem": "1757982668_22f4bf10346e841d092e.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_22f4bf10346e841d092e.webp"
+                },
+                {
+                    "id": "28",
+                    "produto_id": "1",
+                    "imagem": "1757982668_7218607ac9c33e8d3dd3.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_7218607ac9c33e8d3dd3.webp"
+                },
+                {
+                    "id": "31",
+                    "produto_id": "1",
+                    "imagem": "1757982668_9181275c4dacd8fd7852.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_9181275c4dacd8fd7852.webp"
+                },
+                {
+                    "id": "25",
+                    "produto_id": "1",
+                    "imagem": "1757982668_c388d50ca5089ae7259d.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_c388d50ca5089ae7259d.webp"
+                },
+                {
+                    "id": "26",
+                    "produto_id": "1",
+                    "imagem": "1757982668_1a91dd781eb973a3a087.webp",
+                    "ordem": "8",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_1a91dd781eb973a3a087.webp"
+                },
+                {
+                    "id": "30",
+                    "produto_id": "1",
+                    "imagem": "1757982668_bbda0fb6f69867b8e949.webp",
+                    "ordem": "9",
+                    "created_at": "2025-09-15 21:31:08",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757982668_bbda0fb6f69867b8e949.webp"
+                },
+                {
+                    "id": "4",
+                    "produto_id": "1",
+                    "imagem": "1757975788_fb29af4a1d41e62083ab.webp",
+                    "ordem": "10",
+                    "created_at": "2025-09-15 19:36:28",
+                    "updated_at": "2025-09-16 17:59:26",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757975788_fb29af4a1d41e62083ab.webp"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "titulo": "Mega Drive",
+            "descricao": "Megão todo reformado!\r\n- Todos os capacitores trocados!\r\n- Pintura Personalizada!",
+            "link_youtube": "https://www.youtube.com/watch?v=ihfNfIsiEEM",
+            "preco": "300.00",
+            "desconto": "26.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "primeira_pagina",
+            "tags": "",
+            "visualizacoes": "255",
+            "created_at": "2025-09-15 19:44:34",
+            "updated_at": "2025-09-18 23:39:35",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "8",
+                    "produto_id": "2",
+                    "imagem": "1757976274_53af680380ea08faba9b.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_53af680380ea08faba9b.webp"
+                },
+                {
+                    "id": "6",
+                    "produto_id": "2",
+                    "imagem": "1757976274_add75908b7ac21222d1f.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_add75908b7ac21222d1f.webp"
+                },
+                {
+                    "id": "11",
+                    "produto_id": "2",
+                    "imagem": "1757976274_2bda8e87a01c713f0609.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_2bda8e87a01c713f0609.webp"
+                },
+                {
+                    "id": "10",
+                    "produto_id": "2",
+                    "imagem": "1757976274_f22026f08026003d70ce.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_f22026f08026003d70ce.webp"
+                },
+                {
+                    "id": "7",
+                    "produto_id": "2",
+                    "imagem": "1757976274_dd08ec60eb0e89115d12.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_dd08ec60eb0e89115d12.webp"
+                },
+                {
+                    "id": "9",
+                    "produto_id": "2",
+                    "imagem": "1757976274_cb8448e1ab773cb378a1.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-15 19:44:34",
+                    "updated_at": "2025-09-17 14:55:53",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976274_cb8448e1ab773cb378a1.webp"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "titulo": "Nintendinho",
+            "descricao": "Lindo Nintendinho! \r\nTodo Reformado.\r\nPintura personalizada do Neto!",
+            "link_youtube": null,
+            "preco": "890.00",
+            "desconto": "0.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "sem_destaque",
+            "tags": null,
+            "visualizacoes": "26",
+            "created_at": "2025-09-15 19:56:11",
+            "updated_at": "2025-09-15 22:32:54",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "13",
+                    "produto_id": "3",
+                    "imagem": "1757976971_4170aafceb9eb0cfeb29.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_4170aafceb9eb0cfeb29.webp"
+                },
+                {
+                    "id": "20",
+                    "produto_id": "3",
+                    "imagem": "1757976971_4afb7e0dbf7f524c6e95.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_4afb7e0dbf7f524c6e95.webp"
+                },
+                {
+                    "id": "12",
+                    "produto_id": "3",
+                    "imagem": "1757976971_3d6594b90936d177995e.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_3d6594b90936d177995e.webp"
+                },
+                {
+                    "id": "15",
+                    "produto_id": "3",
+                    "imagem": "1757976971_5a34c7b17213a5c07dcd.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_5a34c7b17213a5c07dcd.webp"
+                },
+                {
+                    "id": "19",
+                    "produto_id": "3",
+                    "imagem": "1757976971_97555a2c46e708c34231.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_97555a2c46e708c34231.webp"
+                },
+                {
+                    "id": "22",
+                    "produto_id": "3",
+                    "imagem": "1757976971_abb0b9126a7837d7d2c5.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_abb0b9126a7837d7d2c5.webp"
+                },
+                {
+                    "id": "14",
+                    "produto_id": "3",
+                    "imagem": "1757976971_a09e842a9306473c97fc.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_a09e842a9306473c97fc.webp"
+                },
+                {
+                    "id": "17",
+                    "produto_id": "3",
+                    "imagem": "1757976971_d1de2cb424c3b88b5290.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_d1de2cb424c3b88b5290.webp"
+                },
+                {
+                    "id": "16",
+                    "produto_id": "3",
+                    "imagem": "1757976971_e935fbcbb9479f54a25e.webp",
+                    "ordem": "8",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_e935fbcbb9479f54a25e.webp"
+                },
+                {
+                    "id": "21",
+                    "produto_id": "3",
+                    "imagem": "1757976971_7218845ee8dd2dafe9a2.webp",
+                    "ordem": "9",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_7218845ee8dd2dafe9a2.webp"
+                },
+                {
+                    "id": "18",
+                    "produto_id": "3",
+                    "imagem": "1757976971_48fce7c46895d20c51ec.webp",
+                    "ordem": "10",
+                    "created_at": "2025-09-15 19:56:11",
+                    "updated_at": "2025-09-17 14:55:59",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757976971_48fce7c46895d20c51ec.webp"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "titulo": "Atari Polyvox todo Zerado e Reformado!!",
+            "descricao": "- Atari ano 1984\r\n- Placa Rev. 17 da Atari\r\n- Acompanha 3 jogos\r\n- Vem com 2 controles originais",
+            "link_youtube": null,
+            "preco": "500.00",
+            "desconto": "0.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "primeira_pagina",
+            "tags": "",
+            "visualizacoes": "30",
+            "created_at": "2025-09-06 22:28:11",
+            "updated_at": "2025-09-17 16:02:33",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "40",
+                    "produto_id": "4",
+                    "imagem": "1757986091_653d021dc5c532cbcf62.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_653d021dc5c532cbcf62.webp"
+                },
+                {
+                    "id": "36",
+                    "produto_id": "4",
+                    "imagem": "1757986091_33a0192d6f706e9690f4.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_33a0192d6f706e9690f4.webp"
+                },
+                {
+                    "id": "38",
+                    "produto_id": "4",
+                    "imagem": "1757986091_e0fc722095160e4c7c76.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_e0fc722095160e4c7c76.webp"
+                },
+                {
+                    "id": "33",
+                    "produto_id": "4",
+                    "imagem": "1757986091_e6f74be60c56a30e288b.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_e6f74be60c56a30e288b.webp"
+                },
+                {
+                    "id": "35",
+                    "produto_id": "4",
+                    "imagem": "1757986091_d43b910f4469104b5935.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_d43b910f4469104b5935.webp"
+                },
+                {
+                    "id": "39",
+                    "produto_id": "4",
+                    "imagem": "1757986091_f1951afe01b2d9ac01b3.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_f1951afe01b2d9ac01b3.webp"
+                },
+                {
+                    "id": "34",
+                    "produto_id": "4",
+                    "imagem": "1757986091_90a802a4a8b8b473a90b.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_90a802a4a8b8b473a90b.webp"
+                },
+                {
+                    "id": "37",
+                    "produto_id": "4",
+                    "imagem": "1757986091_14c7f62c3fae4ccf8da8.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-15 22:28:11",
+                    "updated_at": "2025-09-17 18:45:27",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757986091_14c7f62c3fae4ccf8da8.webp"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "titulo": "Nintendo 64",
+            "descricao": "- Aparelho NIntendo 64 semi-novo\r\n- Aparelho totalmente revisado!\r\n- Acompanha fonte, 01 controle e cabo AV",
+            "link_youtube": "https://www.youtube.com/watch?v=dt0qYL3WxFM",
+            "preco": "700.00",
+            "desconto": "0.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "sem_destaque",
+            "tags": "",
+            "visualizacoes": "104",
+            "created_at": "2025-09-16 00:59:16",
+            "updated_at": "2025-09-18 13:30:19",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "48",
+                    "produto_id": "5",
+                    "imagem": "1757995156_b280cd75f4ef66506ea5.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_b280cd75f4ef66506ea5.webp"
+                },
+                {
+                    "id": "42",
+                    "produto_id": "5",
+                    "imagem": "1757995156_309f2f3023e9cb27bbfa.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_309f2f3023e9cb27bbfa.webp"
+                },
+                {
+                    "id": "43",
+                    "produto_id": "5",
+                    "imagem": "1757995156_9f416d01b305ecde706b.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_9f416d01b305ecde706b.webp"
+                },
+                {
+                    "id": "45",
+                    "produto_id": "5",
+                    "imagem": "1757995156_cb7a28e0bcb4564260df.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_cb7a28e0bcb4564260df.webp"
+                },
+                {
+                    "id": "44",
+                    "produto_id": "5",
+                    "imagem": "1757995156_2752fbf272e0bf8bf9c7.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_2752fbf272e0bf8bf9c7.webp"
+                },
+                {
+                    "id": "46",
+                    "produto_id": "5",
+                    "imagem": "1757995156_e279611c7a41bc9b5b01.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_e279611c7a41bc9b5b01.webp"
+                },
+                {
+                    "id": "49",
+                    "produto_id": "5",
+                    "imagem": "1757995156_88bdd93889f8534a7f77.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_88bdd93889f8534a7f77.webp"
+                },
+                {
+                    "id": "47",
+                    "produto_id": "5",
+                    "imagem": "1757995156_d349da8423140fad23ec.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-16 00:59:16",
+                    "updated_at": "2026-02-15 22:51:00",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/1757995156_d349da8423140fad23ec.webp"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "titulo": "Dreamcast Revisado!!!!",
+            "descricao": "- Todo Revisado\r\n- Com GDEMU Instalado\r\n- Todos os capacitores trocados",
+            "link_youtube": null,
+            "preco": "900.00",
+            "desconto": "0.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "primeira_pagina",
+            "tags": "",
+            "visualizacoes": "12",
+            "created_at": "2025-09-16 11:12:02",
+            "updated_at": "2025-09-17 17:16:48",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "63",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (43)_68c97032dc555.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-16 11:12:03",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2843%29_68c97032dc555.webp"
+                },
+                {
+                    "id": "67",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (47)_68c97033780c7.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-16 11:12:03",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2847%29_68c97033780c7.webp"
+                },
+                {
+                    "id": "64",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (44)_68c97033154f5.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-16 11:12:03",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2844%29_68c97033154f5.webp"
+                },
+                {
+                    "id": "65",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (45)_68c970333918d.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-16 11:12:03",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2845%29_68c970333918d.webp"
+                },
+                {
+                    "id": "66",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (46)_68c9703358c02.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-16 11:12:03",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2846%29_68c9703358c02.webp"
+                },
+                {
+                    "id": "69",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (49)_68c97034339c9.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-16 11:12:04",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2849%29_68c97034339c9.webp"
+                },
+                {
+                    "id": "68",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (48)_68c97033a3db9.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-16 11:12:04",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2848%29_68c97033a3db9.webp"
+                },
+                {
+                    "id": "70",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (50)_68c97034eddc4.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-16 11:12:05",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2850%29_68c97034eddc4.webp"
+                },
+                {
+                    "id": "71",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (51)_68c970353d9e1.webp",
+                    "ordem": "8",
+                    "created_at": "2025-09-16 11:12:05",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2851%29_68c970353d9e1.webp"
+                },
+                {
+                    "id": "72",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (52)_68c97035a1c2d.webp",
+                    "ordem": "9",
+                    "created_at": "2025-09-16 11:12:06",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2852%29_68c97035a1c2d.webp"
+                },
+                {
+                    "id": "73",
+                    "produto_id": "7",
+                    "imagem": "s-l960 (53)_68c970360b4d5.webp",
+                    "ordem": "10",
+                    "created_at": "2025-09-16 11:12:06",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l960%20%2853%29_68c970360b4d5.webp"
+                },
+                {
+                    "id": "74",
+                    "produto_id": "7",
+                    "imagem": "s-l1600 (7)_68c9703657338.webp",
+                    "ordem": "11",
+                    "created_at": "2025-09-16 11:12:07",
+                    "updated_at": "2026-02-15 22:51:17",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/s-l1600%20%287%29_68c9703657338.webp"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "titulo": "Atari 5200 Zerado!",
+            "descricao": "Acompanha 2 Controles",
+            "link_youtube": null,
+            "preco": "2300.00",
+            "desconto": "0.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "sem_destaque",
+            "tags": null,
+            "visualizacoes": "14",
+            "created_at": "2025-09-16 17:57:07",
+            "updated_at": "2025-09-17 18:17:56",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "75",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.43.58_80527ebe_68c986f52b1f9_68c9cf23473cc.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-16 17:57:07",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.43.58_80527ebe_68c986f52b1f9_68c9cf23473cc.webp"
+                },
+                {
+                    "id": "76",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.43.59_0372717d_68c986f558e2e_68c9cf237434e.webp",
+                    "ordem": "1",
+                    "created_at": "2025-09-16 17:57:07",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.43.59_0372717d_68c986f558e2e_68c9cf237434e.webp"
+                },
+                {
+                    "id": "77",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.43.59_d8eafb31_68c986f594696_68c9cf23b6492.webp",
+                    "ordem": "2",
+                    "created_at": "2025-09-16 17:57:08",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.43.59_d8eafb31_68c986f594696_68c9cf23b6492.webp"
+                },
+                {
+                    "id": "78",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.00_2b8fe4ce_68c986f5c976f_68c9cf240800a.webp",
+                    "ordem": "3",
+                    "created_at": "2025-09-16 17:57:08",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.00_2b8fe4ce_68c986f5c976f_68c9cf240800a.webp"
+                },
+                {
+                    "id": "79",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.01_fdabae9d_68c986f60ad67_68c9cf24ef5a6.webp",
+                    "ordem": "4",
+                    "created_at": "2025-09-16 17:57:09",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.01_fdabae9d_68c986f60ad67_68c9cf24ef5a6.webp"
+                },
+                {
+                    "id": "80",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.02_65bc4c4b_68c986f6417a0_68c9cf2560162.webp",
+                    "ordem": "5",
+                    "created_at": "2025-09-16 17:57:09",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.02_65bc4c4b_68c986f6417a0_68c9cf2560162.webp"
+                },
+                {
+                    "id": "81",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.03_47ea3241_68c986f6da182_68c9cf25ec8af.webp",
+                    "ordem": "6",
+                    "created_at": "2025-09-16 17:57:10",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.03_47ea3241_68c986f6da182_68c9cf25ec8af.webp"
+                },
+                {
+                    "id": "82",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.05_192b1808_68c986f71afe0_68c9cf264d1d3.webp",
+                    "ordem": "7",
+                    "created_at": "2025-09-16 17:57:10",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.05_192b1808_68c986f71afe0_68c9cf264d1d3.webp"
+                },
+                {
+                    "id": "83",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.05_ca106d17_68c986f74c7bd_68c9cf26e4432.webp",
+                    "ordem": "8",
+                    "created_at": "2025-09-16 17:57:11",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.05_ca106d17_68c986f74c7bd_68c9cf26e4432.webp"
+                },
+                {
+                    "id": "84",
+                    "produto_id": "8",
+                    "imagem": "Imagem do WhatsApp de 2025-09-16 à(s) 12.44.06_67883833_68c986f7c9db3_68c9cf2761545.webp",
+                    "ordem": "9",
+                    "created_at": "2025-09-16 17:57:11",
+                    "updated_at": "2025-09-16 17:59:35",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/Imagem%20do%20WhatsApp%20de%202025-09-16%20%C3%A0%28s%29%2012.44.06_67883833_68c986f7c9db3_68c9cf2761545.webp"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "titulo": "Nintendo 8 bits",
+            "descricao": "",
+            "link_youtube": null,
+            "preco": "250.00",
+            "desconto": "35.00",
+            "flag_ativo": "1",
+            "status": "disponivel",
+            "tipo_destaque": "sem_destaque",
+            "tags": "",
+            "visualizacoes": "6",
+            "created_at": "2025-09-17 18:06:44",
+            "updated_at": "2025-09-17 18:27:30",
+            "deleted_at": null,
+            "imagens": [
+                {
+                    "id": "85",
+                    "produto_id": "9",
+                    "imagem": "8cb9ff88-71da-4487-83e2-beefba07b709-1_68cb22e4bde35.webp",
+                    "ordem": "0",
+                    "created_at": "2025-09-17 18:06:44",
+                    "updated_at": "2025-09-17 18:06:44",
+                    "deleted_at": null,
+                    "uri": "public/uploads/produtos/8cb9ff88-71da-4487-83e2-beefba07b709-1_68cb22e4bde35.webp"
+                }
+            ]
+        }
+    ]
+}
