@@ -40,6 +40,48 @@ body {
     z-index: 1000;
 }
 
+.menu-toggle {
+    display: none;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: var(--text);
+    border-radius: 8px;
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle-icon {
+    width: 20px;
+    height: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle-icon span {
+    height: 2px;
+    width: 100%;
+    border-radius: 999px;
+    background: #111827;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-active .menu-toggle-icon span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.is-active .menu-toggle-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .menu-toggle-icon span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
 .site-logo {
     display: block;
     height: 90px;
@@ -226,24 +268,62 @@ body {
 
 @media (max-width: 768px) {
     :root {
-        --header-height: 132px;
+        --header-height: 92px;
     }
 
     .site-header {
-        flex-direction: column;
-        justify-content: center;
-        gap: 12px;
+        height: var(--header-height);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
         padding: 10px 16px;
     }
 
     .site-logo {
-        height: 120px;
+        height: 68px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
     }
 
     .site-menu {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex;
+        position: absolute;
+        top: calc(var(--header-height) - 2px);
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        gap: 0;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        z-index: 1001;
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .site-menu.is-open {
+        max-height: 260px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .site-menu a {
+        display: block;
+        padding: 12px 14px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .site-menu li:last-child a {
+        border-bottom: 0;
     }
 
     .news-grid {

@@ -18,8 +18,15 @@
 <body>
     <header class="site-header">
         <img class="site-logo" src="<?= base_url($assetPrefix . 'logo.png') ?>" alt="Games Collection Show">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Abrir menu">
+            <span class="menu-toggle-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
         <nav aria-label="Menu principal">
-            <ul class="site-menu">
+            <ul class="site-menu" id="siteMenu">
                 <li><a href="#noticias">Notícias</a></li>
                 <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#galeria">Galeria</a></li>
@@ -108,6 +115,32 @@
             const uploadsBaseUrl = '<?= base_url($assetPrefix . 'uploads/') ?>';
             const carouselEl = document.getElementById('productsCarousel');
             const feedbackEl = document.getElementById('productsFeedback');
+            const menuToggleEl = document.getElementById('menuToggle');
+            const siteMenuEl = document.getElementById('siteMenu');
+
+            if (menuToggleEl && siteMenuEl) {
+                menuToggleEl.addEventListener('click', () => {
+                    const isOpen = siteMenuEl.classList.toggle('is-open');
+                    menuToggleEl.classList.toggle('is-active', isOpen);
+                    menuToggleEl.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                siteMenuEl.querySelectorAll('a').forEach((linkEl) => {
+                    linkEl.addEventListener('click', () => {
+                        siteMenuEl.classList.remove('is-open');
+                        menuToggleEl.classList.remove('is-active');
+                        menuToggleEl.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        siteMenuEl.classList.remove('is-open');
+                        menuToggleEl.classList.remove('is-active');
+                        menuToggleEl.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
 
             function asArray(payload) {
                 if (Array.isArray(payload)) {
