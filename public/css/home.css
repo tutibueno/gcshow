@@ -25,6 +25,10 @@ body {
     flex-direction: column;
 }
 
+html {
+    scroll-padding-top: calc(var(--header-height) - 30px);
+}
+
 .site-header {
     position: fixed;
     top: 0;
@@ -121,6 +125,7 @@ body {
 
 .content-section {
     margin-bottom: 42px;
+    scroll-margin-top: calc(var(--header-height) - 30px);
 }
 
 .news-grid {
