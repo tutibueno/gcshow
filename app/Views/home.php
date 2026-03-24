@@ -43,7 +43,16 @@
     <!-- CONTATO -->
     <section class="content-section" id="contato">
         <h2 class="section-title">Contato</h2>
-        <p>Email / WhatsApp</p>
+        <p class="contact-text">Fale conosco.</p>
+        <a
+            href="https://wa.me/5511981824614"
+            class="whatsapp-button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Wilmers Eventos
+        </a>
     </section>
 
 </main>
