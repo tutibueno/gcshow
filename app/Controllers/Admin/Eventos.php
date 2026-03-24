@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Controllers\Admin;
+
+use App\Controllers\BaseController;
+use App\Models\EventoModel;
+
+class Eventos extends BaseController
+{
+    public function index()
+    {
+        $model = new EventoModel();
+        $data['eventos'] = $model->orderBy('data_evento', 'DESC')->findAll();
+
+        return view('admin/eventos/index', $data);
+    }
+
+    public function criar()
+    {
+        return view('admin/eventos/criar');
+    }
+
+    public function salvar()
+    {
+        $model = new EventoModel();
+
+        $imagem = $this->request->getFile('imagem');
+        $nomeImagem = null;
+
+        if ($imagem && $imagem->isValid()) {
+            $nomeImagem = $imagem->getRandomName();
+            $imagem->move('uploads/eventos', $nomeImagem);
+        }
+
+        $model->save([
+            'titulo' => $this->request->getPost('titulo'),
+            'descricao' => $this->request->getPost('descricao'),
+            'data_evento' => $this->request->getPost('data_evento'),
+            'hora_inicio' => $this->request->getPost('hora_inicio'),
+            'hora_fim' => $this->request->getPost('hora_fim'),
+            'local' => $this->request->getPost('local'),
+            'cidade' => $this->request->getPost('cidade'),
+            'estado' => $this->request->getPost('estado'),
+            'destaque' => $this->request->getPost('destaque') ?? 0,
+            'publicado' => $this->request->getPost('publicado') ?? 0,
+            'ingressos_url' => $this->request->getPost('ingressos_url'),
+            'ingressos_texto' => $this->request->getPost('ingressos_texto'),
+            'imagem' => $nomeImagem
+        ]);
+
+        return redirect()->to('/admin/eventos');
+    }
+
+    public function editar($id)
+    {
+        $model = new EventoModel();
+        $data['evento'] = $model->find($id);
+
+        return view('admin/eventos/editar', $data);
+    }
+
+    public function atualizar($id)
+    {
+        $model = new EventoModel();
+
+        $imagem = $this->request->getFile('imagem');
+        $nomeImagem = $this->request->getPost('imagem_atual');
+
+        if ($imagem && $imagem->isValid()) {
+            $nomeImagem = $imagem->getRandomName();
+            $imagem->move('uploads/eventos', $nomeImagem);
+        }
+
+        $model->update($id, [
+            'titulo' => $this->request->getPost('titulo'),
+            'descricao' => $this->request->getPost('descricao'),
+            'data_evento' => $this->request->getPost('data_evento'),
+            'hora_inicio' => $this->request->getPost('hora_inicio'),
+            'hora_fim' => $this->request->getPost('hora_fim'),
+            'local' => $this->request->getPost('local'),
+            'cidade' => $this->request->getPost('cidade'),
+            'estado' => $this->request->getPost('estado'),
+            'destaque' => $this->request->getPost('destaque') ?? 0,
+            'publicado' => $this->request->getPost('publicado') ?? 0,
+            'ingressos_url' => $this->request->getPost('ingressos_url'),
+            'ingressos_texto' => $this->request->getPost('ingressos_texto'),
+            'imagem' => $nomeImagem
+        ]);
+
+        return redirect()->to('/admin/eventos');
+    }
+
+    public function excluir($id)
+    {
+        $model = new EventoModel();
+        $model->delete($id);
+
+        return redirect()->to('/admin/eventos');
+    }
+}
