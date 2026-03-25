@@ -383,10 +383,17 @@ html {
         display: flex;
         align-items: center;
         padding: 10px 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .site-header.scrolled {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
     }
 
     .menu-toggle {
         margin-left: auto;
+        width: 44px;
+        height: 44px;
     }
 
     .site-logo {

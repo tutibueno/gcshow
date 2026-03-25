@@ -38,6 +38,13 @@
     });
 </script>
 
+<script>
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector(".site-header");
+        header.classList.toggle("scrolled", window.scrollY > 10);
+    });
+</script>
+
 
 </body>
 
