@@ -11,9 +11,9 @@ class Home extends BaseController
         $model = new EventoModel();
 
         $data['eventos'] = $model
-            ->where('data_evento >=', date('Y-m-d'))
+            ->where('data_inicio >=', date('Y-m-d'))
             ->where('publicado', 1)
-            ->orderBy('data_evento', 'ASC')
+            ->orderBy('data_inicio', 'ASC')
             ->limit(3)
             ->find();
 

@@ -12,7 +12,8 @@ class EventoModel extends Model
     protected $allowedFields = [
         'titulo',
         'descricao',
-        'data_evento',
+        'data_inicio',
+        'data_fim',
         'hora_inicio',
         'hora_fim',
         'local',
@@ -22,7 +23,8 @@ class EventoModel extends Model
         'ingressos_url',
         'ingressos_texto',
         'destaque',
-        'publicado'
+        'publicado',
+        'mapa_iframe'
     ];
 
     protected $useTimestamps = true;

@@ -25,8 +25,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Data</label>
-                            <input type="date" name="data_evento" class="form-control" required>
+                            <label>Data Início</label>
+                            <input type="date" name="data_inicio" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Data Fim</label>
+                            <input type="date" name="data_fim" class="form-control" required>
                         </div>
 
                         <div class="form-group">
@@ -62,6 +67,14 @@
                         <div class="form-group">
                             <label>Texto do botão</label>
                             <input type="text" name="ingressos_texto" class="form-control" placeholder="Ex: Comprar ingressos">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mapa do Google (iframe)</label>
+                            <textarea name="mapa_iframe" class="form-control" rows="4"></textarea>
+                            <small>
+                                Vá no Google Maps → Compartilhar → Incorporar mapa → Copiar HTML
+                            </small>
                         </div>
 
                         <div class="form-group">

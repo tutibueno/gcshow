@@ -21,14 +21,21 @@
                         <h3><?= $evento['titulo'] ?></h3>
 
                         <p>
-                            <strong>Data:</strong>
-                            <?= date('d/m/Y', strtotime($evento['data_evento'])) ?><br>
+                            <?php if ($evento['data_inicio'] == $evento['data_fim']): ?>
+                                <strong>Data:</strong>
+                                <?= dataEvento($evento['data_inicio']) ?><br>
+                            <?php else: ?>
+                                <strong>Período:</strong><br>
+                                <?= dataEvento($evento['data_inicio']) ?><br>
+                                até<br>
+                                <?= dataEvento($evento['data_fim']) ?><br>
+                            <?php endif; ?>
 
                             <strong>Horário:</strong>
-                            <?= $evento['hora_inicio'] ?> - <?= $evento['hora_fim'] ?><br>
+                            <?= horaEvento($evento['hora_inicio'], $evento['hora_fim']) ?><br>
 
                             <strong>Local:</strong>
-                            <?= $evento['local'] ?> - <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
+                            <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
                         </p>
 
                         <?php if ($evento['ingressos_url']): ?>
@@ -36,10 +43,11 @@
                                 <?= $evento['ingressos_texto'] ?: 'Comprar ingressos' ?>
                             </a>
                         <?php endif; ?>
-
-                        <a href="<?= base_url('evento/' . $evento['id']) ?>" class="btn btn-primary">
-                            Ver detalhes
-                        </a>
+                        <p>
+                            <a href="<?= base_url('evento/' . $evento['id']) ?>" class="btn btn-primary">
+                                Ver detalhes
+                            </a>
+                        </p>
 
                     </div>
                 <?php endforeach; ?>
@@ -68,8 +76,18 @@
                         <h3><?= $evento['titulo'] ?></h3>
 
                         <p>
-                            <strong>Data:</strong>
-                            <?= date('d/m/Y', strtotime($evento['data_evento'])) ?><br>
+                            <?php if ($evento['data_inicio'] == $evento['data_fim']): ?>
+                                <strong>Data:</strong>
+                                <?= dataEvento($evento['data_inicio']) ?><br>
+                            <?php else: ?>
+                                <strong>Período:</strong><br>
+                                <?= dataEvento($evento['data_inicio']) ?><br>
+                                até<br>
+                                <?= dataEvento($evento['data_fim']) ?><br>
+                            <?php endif; ?>
+
+                            <strong>Horário:</strong>
+                            <?= horaEvento($evento['hora_inicio'], $evento['hora_fim']) ?><br>
 
                             <strong>Local:</strong>
                             <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>

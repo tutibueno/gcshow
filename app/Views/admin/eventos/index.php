@@ -33,7 +33,15 @@
                                 <tr>
                                     <td><?= $e['id'] ?></td>
                                     <td><?= $e['titulo'] ?></td>
-                                    <td><?= date('d/m/Y', strtotime($e['data_evento'])) ?></td>
+                                    <td>
+                                        <?php if ($e['data_inicio'] == $e['data_fim']): ?>
+                                            <?= date('d/m/Y', strtotime($e['data_inicio'])) ?>
+                                        <?php else: ?>
+                                            <?= date('d/m/Y', strtotime($e['data_inicio'])) ?>
+                                            até
+                                            <?= date('d/m/Y', strtotime($e['data_fim'])) ?>
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?= $e['hora_inicio'] ?> - <?= $e['hora_fim'] ?></td>
                                     <td><?= $e['cidade'] ?>/<?= $e['estado'] ?></td>
                                     <td>

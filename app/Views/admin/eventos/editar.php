@@ -27,8 +27,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Data</label>
-                            <input type="date" name="data_evento" class="form-control" value="<?= $evento['data_evento'] ?>">
+                            <label>Data Início</label>
+                            <input type="date" name="data_inicio" class="form-control" value="<?= $evento['data_inicio'] ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Data Fim</label>
+                            <input type="date" name="data_fim" class="form-control" value="<?= $evento['data_fim'] ?>">
                         </div>
 
                         <div class="form-group">
@@ -67,14 +72,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Imagem</label><br>
-                            <?php if ($evento['imagem']): ?>
-                                <img src="<?= base_url('uploads/eventos/' . $evento['imagem']) ?>" width="120"><br><br>
-                            <?php endif; ?>
-                            <input type="file" name="imagem" class="form-control">
-                        </div>
-
-                        <div class="form-group">
                             <label>
                                 <input type="checkbox" name="destaque" value="1" <?= $evento['destaque'] ? 'checked' : '' ?>>
                                 Evento em destaque
@@ -86,6 +83,19 @@
                                 <input type="checkbox" name="publicado" value="1" <?= $evento['publicado'] ? 'checked' : '' ?>>
                                 Publicado
                             </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mapa do Google (iframe)</label>
+                            <textarea name="mapa_iframe" class="form-control" rows="4"><?= $evento['mapa_iframe'] ?></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Imagem</label><br>
+                            <?php if ($evento['imagem']): ?>
+                                <img src="<?= base_url('uploads/eventos/' . $evento['imagem']) ?>" width="120"><br><br>
+                            <?php endif; ?>
+                            <input type="file" name="imagem" class="form-control">
                         </div>
 
                         <button type="submit" class="btn btn-success">Atualizar</button>

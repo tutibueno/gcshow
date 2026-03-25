@@ -9,10 +9,23 @@
     <?php endif; ?>
 
     <p>
-        <strong>Data:</strong> <?= date('d/m/Y', strtotime($evento['data_evento'])) ?><br>
-        <strong>Horário:</strong> <?= $evento['hora_inicio'] ?> - <?= $evento['hora_fim'] ?><br>
-        <strong>Local:</strong> <?= $evento['local'] ?><br>
-        <strong>Cidade:</strong> <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
+        <strong>Data:</strong><br>
+
+        <?php
+        $dias = diasEvento($evento['data_inicio'], $evento['data_fim']);
+        foreach ($dias as $dia):
+        ?>
+            <?= $dia ?><br>
+        <?php endforeach; ?>
+
+        <strong>Horário:</strong>
+        <?= horaEvento($evento['hora_inicio'], $evento['hora_fim']) ?>
+    </p>
+
+
+    
+    <strong>Local:</strong> <?= $evento['local'] ?><br>
+    <strong>Cidade:</strong> <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
     </p>
 
     <p><?= nl2br($evento['descricao']) ?></p>
@@ -23,6 +36,13 @@
                 <?= $evento['ingressos_texto'] ?: 'Comprar ingressos' ?>
             </a>
         </p>
+    <?php endif; ?>
+
+    <?php if ($evento['mapa_iframe']): ?>
+        <h3>Local do evento</h3>
+        <div style="max-width:100%; overflow:hidden; border-radius:10px;">
+            <?= $evento['mapa_iframe'] ?>
+        </div>
     <?php endif; ?>
 
 </div>

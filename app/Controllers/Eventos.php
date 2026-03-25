@@ -11,16 +11,18 @@ class Eventos extends BaseController
     {
         $model = new EventoModel();
 
+        // Próximos ou em andamento
         $data['proximos_eventos'] = $model
-            ->where('data_evento >=', date('Y-m-d'))
+            ->where('data_fim >=', date('Y-m-d'))
             ->where('publicado', 1)
-            ->orderBy('data_evento', 'ASC')
+            ->orderBy('data_inicio', 'ASC')
             ->findAll();
 
+        // Eventos anteriores
         $data['eventos_anteriores'] = $model
-            ->where('data_evento <', date('Y-m-d'))
+            ->where('data_fim <', date('Y-m-d'))
             ->where('publicado', 1)
-            ->orderBy('data_evento', 'DESC')
+            ->orderBy('data_inicio', 'DESC')
             ->findAll();
 
         return view('eventos/index', $data);

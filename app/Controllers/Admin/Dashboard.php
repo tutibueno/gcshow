@@ -14,10 +14,10 @@ class Dashboard extends BaseController
         $data = [
             'total_eventos' => $eventoModel->countAll(),
             'proximos_eventos' => $eventoModel
-                ->where('data_evento >=', date('Y-m-d'))
+                ->where('data_inicio >=', date('Y-m-d'))
                 ->countAllResults(),
             'ultimos_eventos' => $eventoModel
-                ->orderBy('data_evento', 'DESC')
+                ->orderBy('data_inicio', 'DESC')
                 ->limit(5)
                 ->find()
         ];

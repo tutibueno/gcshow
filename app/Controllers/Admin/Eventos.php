@@ -10,7 +10,7 @@ class Eventos extends BaseController
     public function index()
     {
         $model = new EventoModel();
-        $data['eventos'] = $model->orderBy('data_evento', 'DESC')->findAll();
+        $data['eventos'] = $model->orderBy('data_inicio', 'DESC')->findAll();
 
         return view('admin/eventos/index', $data);
     }
@@ -35,16 +35,18 @@ class Eventos extends BaseController
         $model->save([
             'titulo' => $this->request->getPost('titulo'),
             'descricao' => $this->request->getPost('descricao'),
-            'data_evento' => $this->request->getPost('data_evento'),
+            'data_inicio' => $this->request->getPost('data_inicio'),
+            'data_fim' => $this->request->getPost('data_fim'),
             'hora_inicio' => $this->request->getPost('hora_inicio'),
             'hora_fim' => $this->request->getPost('hora_fim'),
             'local' => $this->request->getPost('local'),
             'cidade' => $this->request->getPost('cidade'),
             'estado' => $this->request->getPost('estado'),
-            'destaque' => $this->request->getPost('destaque') ?? 0,
-            'publicado' => $this->request->getPost('publicado') ?? 0,
             'ingressos_url' => $this->request->getPost('ingressos_url'),
             'ingressos_texto' => $this->request->getPost('ingressos_texto'),
+            'mapa_iframe' => $this->request->getPost('mapa_iframe'),
+            'destaque' => $this->request->getPost('destaque') ?? 0,
+            'publicado' => $this->request->getPost('publicado') ?? 0,
             'imagem' => $nomeImagem
         ]);
 
@@ -74,16 +76,18 @@ class Eventos extends BaseController
         $model->update($id, [
             'titulo' => $this->request->getPost('titulo'),
             'descricao' => $this->request->getPost('descricao'),
-            'data_evento' => $this->request->getPost('data_evento'),
+            'data_inicio' => $this->request->getPost('data_inicio'),
+            'data_fim' => $this->request->getPost('data_fim'),
             'hora_inicio' => $this->request->getPost('hora_inicio'),
             'hora_fim' => $this->request->getPost('hora_fim'),
             'local' => $this->request->getPost('local'),
             'cidade' => $this->request->getPost('cidade'),
             'estado' => $this->request->getPost('estado'),
-            'destaque' => $this->request->getPost('destaque') ?? 0,
-            'publicado' => $this->request->getPost('publicado') ?? 0,
             'ingressos_url' => $this->request->getPost('ingressos_url'),
             'ingressos_texto' => $this->request->getPost('ingressos_texto'),
+            'mapa_iframe' => $this->request->getPost('mapa_iframe'),
+            'destaque' => $this->request->getPost('destaque') ?? 0,
+            'publicado' => $this->request->getPost('publicado') ?? 0,
             'imagem' => $nomeImagem
         ]);
 

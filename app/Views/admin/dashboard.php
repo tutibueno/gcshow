@@ -61,7 +61,15 @@
                             <?php foreach ($ultimos_eventos as $evento): ?>
                                 <tr>
                                     <td><?= $evento['titulo'] ?></td>
-                                    <td><?= date('d/m/Y', strtotime($evento['data_evento'])) ?></td>
+                                    <td>
+                                        <?php if ($evento['data_inicio'] == $evento['data_fim']): ?>
+                                            <?= date('d/m/Y', strtotime($evento['data_inicio'])) ?>
+                                        <?php else: ?>
+                                            <?= date('d/m/Y', strtotime($evento['data_inicio'])) ?>
+                                            até
+                                            <?= date('d/m/Y', strtotime($evento['data_fim'])) ?>
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?= $evento['local'] ?></td>
                                 </tr>
                             <?php endforeach; ?>

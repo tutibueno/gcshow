@@ -17,7 +17,13 @@
                 <div class="news-card">
                     <h3><?= $evento['titulo'] ?></h3>
                     <p>
-                        <?= date('d/m/Y', strtotime($evento['data_evento'])) ?><br>
+                        <strong>Data:</strong>
+                        <?= periodoResumido($evento['data_inicio'], $evento['data_fim']) ?><br>
+
+                        <strong>Horário:</strong>
+                        <?= horaEvento($evento['hora_inicio'], $evento['hora_fim']) ?><br>
+
+                        <strong>Local:</strong>
                         <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
                     </p>
 
@@ -48,8 +54,7 @@
             href="https://wa.me/5511981824614"
             class="whatsapp-button"
             target="_blank"
-            rel="noopener noreferrer"
-        >
+            rel="noopener noreferrer">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             Wilmers Eventos
         </a>
