@@ -143,3 +143,9 @@ function periodoResumido($dataInicio, $dataFim)
     // Anos diferentes
     return "{$diaInicio} de {$mesInicio} de {$anoInicio} a {$diaFim} de {$mesFim} de {$anoFim}";
 }
+
+function getYouTubeId($url)
+{
+    parse_str(parse_url($url, PHP_URL_QUERY), $params);
+    return $params['v'] ?? '';
+}

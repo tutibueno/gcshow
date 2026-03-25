@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('public/favicon-16x16.png') ?>">
     <link rel="manifest" href="<?= base_url('public/site.webmanifest') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="<?= base_url('public/css/home.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('public/css/home_old.css') ?>">
 </head>
 
 <body>

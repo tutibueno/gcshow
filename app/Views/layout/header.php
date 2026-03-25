@@ -13,6 +13,8 @@
     <link rel="manifest" href="<?= base_url('public/site.webmanifest') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="<?= base_url('public/css/home.css') ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
 </head>
 
 <body>
@@ -27,13 +29,15 @@
             </span>
         </button>
         <nav aria-label="Menu principal">
+            <?php $uri = service('uri'); ?>
+
             <ul class="site-menu">
-                <li><a href="<?= base_url('/') ?>">Home</a></li>
-                <li><a href="<?= base_url('eventos') ?>">Eventos</a></li>
-                <li><a href="<?= base_url('historia') ?>">História</a></li>
-                <li><a href="<?= base_url('participe') ?>">Participe</a></li>
-                <li><a href="<?= base_url('galeria') ?>">Galeria</a></li>
-                <li><a href="<?= base_url('loja') ?>">Loja</a></li>
+                <li><a class="<?= $uri->getSegment(1) == '' ? 'active' : '' ?>" href="<?= base_url('/') ?>">Home</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'eventos' ? 'active' : '' ?>" href="<?= base_url('eventos') ?>">Eventos</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'historia' ? 'active' : '' ?>" href="<?= base_url('historia') ?>">História</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'galeria' ? 'active' : '' ?>" href="<?= base_url('galeria') ?>">Galeria</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'loja' ? 'active' : '' ?>" href="<?= base_url('loja') ?>">Loja</a></li>
             </ul>
+
         </nav>
     </header>

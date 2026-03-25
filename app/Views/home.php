@@ -43,7 +43,30 @@
     <!-- GALERIA -->
     <section class="content-section" id="galeria">
         <h2 class="section-title">Destaques</h2>
-        <!-- seu carousel atual -->
+        <div class="gallery-carousel">
+            <?php foreach ($galeria_destaque as $foto): ?>
+                <?php if ($foto['tipo'] == 'foto'): ?>
+                    <figure class="gallery-slide">
+                        <a href="<?= base_url('uploads/galeria/' . $foto['arquivo']) ?>"
+                            class="glightbox"
+                            data-gallery="home"
+                            data-title="<?= esc($foto['titulo'] ?? '') ?>">
+
+                            <img src="<?= base_url('uploads/galeria/' . $foto['arquivo']) ?>">
+                        </a>
+                    </figure>
+                <?php else: ?>
+                    <div class="gallery-slide">
+                        <a href="<?= $foto['video_url'] ?>"
+                            class="glightbox"
+                            data-gallery="evento">
+
+                            <img src="https://img.youtube.com/vi/<?= getYouTubeId($foto['video_url']) ?>/hqdefault.jpg">
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
     </section>
 
     <!-- CONTATO -->

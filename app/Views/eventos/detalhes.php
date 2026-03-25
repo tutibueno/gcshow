@@ -23,7 +23,7 @@
     </p>
 
 
-    
+
     <strong>Local:</strong> <?= $evento['local'] ?><br>
     <strong>Cidade:</strong> <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
     </p>
@@ -45,6 +45,38 @@
         </div>
     <?php endif; ?>
 
+    <h3>Galeria</h3>
+
+    <div class="gallery-carousel">
+
+        <?php foreach ($galeria as $item): ?>
+
+            <?php if ($item['tipo'] == 'foto'): ?>
+                <figure class="gallery-slide">
+                    <a href="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>"
+                        class="glightbox"
+                        data-gallery="evento"
+                        data-title="<?= esc($item['titulo']) ?>">
+
+                        <img src="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>">
+                    </a>
+                </figure>
+            <?php else: ?>
+                <div class="gallery-slide">
+                    <a href="<?= $item['video_url'] ?>"
+                        class="glightbox"
+                        data-gallery="evento">
+
+                        <img src="https://img.youtube.com/vi/<?= getYouTubeId($item['video_url']) ?>/hqdefault.jpg">
+                    </a>
+                </div>
+            <?php endif; ?>
+
+        <?php endforeach; ?>
+
+    </div>
+
 </div>
+
 
 <?= $this->include('layout/footer') ?>

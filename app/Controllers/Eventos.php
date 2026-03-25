@@ -33,6 +33,12 @@ class Eventos extends BaseController
         $model = new EventoModel();
         $data['evento'] = $model->find($id);
 
+        $galeriaModel = new \App\Models\GaleriaModel();
+
+        $data['galeria'] = $galeriaModel
+            ->where('evento_id', $id)
+            ->findAll();
+
         return view('eventos/detalhes', $data);
     }
 }

@@ -36,7 +36,10 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->post('eventos/atualizar/(:num)', 'Admin\Eventos::atualizar/$1');
     $routes->get('eventos/excluir/(:num)', 'Admin\Eventos::excluir/$1');
 
-
+    //Galeria
+    $routes->get('galeria', 'Admin\Galeria::index');
+    $routes->post('galeria/salvar', 'Admin\Galeria::salvar');
+    $routes->get('galeria/excluir/(:num)', 'Admin\Galeria::excluir/$1');
 });
 
 //Eventos

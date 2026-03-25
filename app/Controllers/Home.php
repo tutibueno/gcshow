@@ -3,19 +3,27 @@
 namespace App\Controllers;
 
 use App\Models\EventoModel;
+use App\Models\GaleriaModel;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        $model = new EventoModel();
+        $eventoModel = new EventoModel();
+        $galeriaModel = new GaleriaModel();
 
-        $data['eventos'] = $model
-            ->where('data_inicio >=', date('Y-m-d'))
+        $data['eventos'] = $eventoModel
+            ->where('data_fim >=', date('Y-m-d'))
             ->where('publicado', 1)
             ->orderBy('data_inicio', 'ASC')
             ->limit(3)
             ->find();
+
+        $data['galeria_destaque'] = $galeriaModel
+            ->where('destaque', 1)
+            ->orderBy('id', 'DESC')
+            ->limit(10)
+            ->findAll();
 
         return view('home', $data);
     }
