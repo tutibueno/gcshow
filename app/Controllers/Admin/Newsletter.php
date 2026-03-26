@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Modules\Newsletter\Controllers\Admin;
+namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Modules\Newsletter\Models\SubscriberModel;
+use App\Models\NewsletterSubscriberModel;
 
-class SubscribersController extends BaseController
+class Newsletter extends BaseController
 {
     public function index()
     {
         $term = trim((string) $this->request->getGet('q'));
-        $model = new SubscriberModel();
+        $model = new NewsletterSubscriberModel();
 
-        return view('App\Modules\Newsletter\Views\admin\subscribers_index', [
+        return view('admin/newsletter/index', [
             'term' => $term,
             'subscribers' => $model->search($term)->findAll(),
         ]);
@@ -21,7 +21,7 @@ class SubscribersController extends BaseController
     public function exportCsv()
     {
         $term = trim((string) $this->request->getGet('q'));
-        $subscribers = (new SubscriberModel())->search($term)->findAll();
+        $subscribers = (new NewsletterSubscriberModel())->search($term)->findAll();
 
         $filename = 'newsletter-subscribers-' . date('Ymd-His') . '.csv';
         $handle = fopen('php://temp', 'w+');
@@ -55,13 +55,13 @@ class SubscribersController extends BaseController
             return redirect()->back();
         }
 
-        (new SubscriberModel())->update($id, ['status' => $status]);
+        (new NewsletterSubscriberModel())->update($id, ['status' => $status]);
         return redirect()->to('/admin/newsletter');
     }
 
     public function delete(int $id)
     {
-        (new SubscriberModel())->delete($id);
+        (new NewsletterSubscriberModel())->delete($id);
         return redirect()->to('/admin/newsletter');
     }
 }

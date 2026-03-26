@@ -1,5 +1,5 @@
 <?php if (service('uri')->getSegment(1) !== 'newsletter'): ?>
-    <?= view('App\Modules\Newsletter\Views\partials\subscribe_form') ?>
+    <?= view('newsletter/partials/subscribe_form') ?>
 <?php endif; ?>
 
 <footer class="site-footer">

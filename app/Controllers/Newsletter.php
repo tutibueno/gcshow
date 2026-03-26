@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Modules\Newsletter\Controllers;
+namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use App\Modules\Newsletter\Libraries\NewsletterService;
+use App\Libraries\NewsletterService;
 
-class NewsletterController extends BaseController
+class Newsletter extends BaseController
 {
     public function index()
     {
-        return view('App\Modules\Newsletter\Views\newsletter_form_page');
+        return view('newsletter/index');
     }
 
     public function subscribe()
@@ -40,7 +39,7 @@ class NewsletterController extends BaseController
     {
         $result = (new NewsletterService())->unsubscribeByToken($token);
 
-        return view('App\Modules\Newsletter\Views\unsubscribe_result', [
+        return view('newsletter/unsubscribe_result', [
             'success' => $result['success'],
             'message' => $result['message'],
         ]);

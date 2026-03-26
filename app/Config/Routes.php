@@ -26,6 +26,9 @@ $routes->post('/loja/carrinho/frete', 'Loja::calcularFrete');
 $routes->get('/loja/checkout', 'Loja::checkout');
 $routes->post('/loja/finalizar-pedido', 'Loja::finalizarPedido');
 $routes->match(['GET', 'POST'], '/loja/meus-pedidos', 'Loja::meusPedidos');
+$routes->get('/newsletter', 'Newsletter::index');
+$routes->post('/newsletter/subscribe', 'Newsletter::subscribe');
+$routes->get('/newsletter/unsubscribe/(:segment)', 'Newsletter::unsubscribe/$1');
 
 // LOGIN
 $routes->get('/admin', 'Admin\Login::index');
@@ -74,6 +77,11 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->post('pedidos/atualizar-status/(:num)', 'Admin\Pedidos::atualizarStatus/$1');
 
     $routes->get('relatorios/vendas', 'Admin\Relatorios::vendas');
+
+    $routes->get('newsletter', 'Admin\Newsletter::index');
+    $routes->get('newsletter/export', 'Admin\Newsletter::exportCsv');
+    $routes->post('newsletter/status/(:num)', 'Admin\Newsletter::updateStatus/$1');
+    $routes->get('newsletter/delete/(:num)', 'Admin\Newsletter::delete/$1');
 });
 
 //Eventos

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Newsletter\Models;
+namespace App\Models;
 
 use CodeIgniter\Model;
 
-class SubscriberModel extends Model
+class NewsletterSubscriberModel extends Model
 {
     protected $table = 'newsletter_subscribers';
     protected $primaryKey = 'id';

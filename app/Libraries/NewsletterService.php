@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Modules\Newsletter\Libraries;
+namespace App\Libraries;
 
-use App\Modules\Newsletter\Models\SubscriberModel;
+use App\Models\NewsletterSubscriberModel;
 use Config\Services;
 
 class NewsletterService
 {
     public function subscribe(string $name, string $email): array
     {
-        $model = new SubscriberModel();
+        $model = new NewsletterSubscriberModel();
         $existing = $model->where('email', $email)->first();
 
         if ($existing) {
@@ -42,7 +42,7 @@ class NewsletterService
 
     public function unsubscribeByToken(string $token): array
     {
-        $model = new SubscriberModel();
+        $model = new NewsletterSubscriberModel();
         $subscriber = $model->where('token', $token)->first();
 
         if (!$subscriber) {
