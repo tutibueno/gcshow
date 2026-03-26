@@ -8,63 +8,63 @@
     <section class="content-section gallery-event-card">
         <form action="<?= base_url('loja/finalizar-pedido') ?>" method="post">
             <div class="store-checkout-grid">
-                <div>
-                    <div class="form-group">
+                <div class="store-checkout-form">
+                    <div class="store-field">
                         <label>Nome</label>
                         <input type="text" name="nome" class="store-select" required>
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>E-mail</label>
                         <input type="email" name="email" class="store-select" required>
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>Telefone</label>
                         <input type="text" name="telefone" class="store-select">
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>Documento</label>
                         <input type="text" name="documento" class="store-select">
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>CEP</label>
                         <input type="text" name="cep" class="store-select" value="<?= esc($frete_info['cep'] ?? '') ?>" required>
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>Logradouro</label>
                         <input type="text" name="logradouro" class="store-select" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
+                    <div class="store-field-row store-field-row-2">
+                        <div class="store-field">
                             <label>Número</label>
                             <input type="text" name="numero" class="store-select">
                         </div>
-                        <div class="form-group col-md-8">
+                        <div class="store-field">
                             <label>Complemento</label>
                             <input type="text" name="complemento" class="store-select">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                    <div class="store-field-row store-field-row-address">
+                        <div class="store-field">
                             <label>Bairro</label>
                             <input type="text" name="bairro" class="store-select">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="store-field">
                             <label>Cidade</label>
                             <input type="text" name="cidade" class="store-select" required>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="store-field">
                             <label>UF</label>
                             <input type="text" name="estado" class="store-select" maxlength="2" required>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>Pagamento</label>
                         <select name="metodo_pagamento" class="store-select" required>
                             <option value="pix">PIX</option>
                             <option value="cartao">Cartão</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="store-field">
                         <label>Observações</label>
                         <textarea name="observacoes" class="store-select" rows="4"></textarea>
                     </div>

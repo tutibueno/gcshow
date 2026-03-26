@@ -504,12 +504,39 @@ html {
 
 .store-select {
     width: 100%;
-    max-width: 360px;
     padding: 12px 14px;
     border: 1px solid #d1d5db;
     border-radius: 10px;
     background: #fff;
     font: inherit;
+}
+
+.store-checkout-form {
+    display: grid;
+    gap: 16px;
+}
+
+.store-field {
+    display: grid;
+    gap: 8px;
+}
+
+.store-field label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.store-field-row {
+    display: grid;
+    gap: 16px;
+}
+
+.store-field-row-2 {
+    grid-template-columns: minmax(140px, 0.4fr) minmax(0, 1fr);
+}
+
+.store-field-row-address {
+    grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) 100px;
 }
 
 .store-grid {
@@ -890,6 +917,11 @@ html {
     .store-grid,
     .store-detail-grid,
     .store-checkout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .store-field-row-2,
+    .store-field-row-address {
         grid-template-columns: 1fr;
     }
 

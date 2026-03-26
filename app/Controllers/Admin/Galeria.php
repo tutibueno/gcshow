@@ -36,12 +36,17 @@ class Galeria extends BaseController
             $img = $this->request->getFile('arquivo');
 
             if ($img && $img->isValid()) {
+                $diretorio = ROOTPATH . 'uploads/galeria/';
+
+                if (!is_dir($diretorio)) {
+                    mkdir($diretorio, 0777, true);
+                }
 
                 $nomeWebp = uniqid() . '.webp';
-                $caminho = 'uploads/galeria/' . $nomeWebp;
+                $caminho = $diretorio . $nomeWebp;
 
                 // Converter para WEBP
-                $image = \Config\Services::image()
+                \Config\Services::image()
                     ->withFile($img)
                     ->convert(IMAGETYPE_WEBP)
                     ->save($caminho, 80);
