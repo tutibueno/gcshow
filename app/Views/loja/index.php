@@ -5,7 +5,7 @@
         <div class="gallery-event-header">
             <div>
                 <h1 class="section-title">Loja</h1>
-                <p class="institutional-intro">Produtos retrô com estoque, variações e checkout integrado à estrutura da loja.</p>
+                <p class="institutional-intro">Nossos produtos.</p>
             </div>
             <a href="<?= base_url('loja/carrinho') ?>" class="btn btn-success">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
