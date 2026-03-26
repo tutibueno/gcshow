@@ -4,6 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Game Collection Show">
+    <meta property="og:description" content="Site Oficial Game Collection Show">
+    <meta property="og:image" content="<?= base_url('public/logo.png') ?>">
+    <meta property="og:url" content="<?= base_url() ?>">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Game Collection Show</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url('public/favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= base_url('public/favicon.ico') ?>">
