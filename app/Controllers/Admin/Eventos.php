@@ -43,7 +43,7 @@ class Eventos extends BaseController
                     ->convert(IMAGETYPE_WEBP)
                     ->save($caminho, 80);
 
-                $arquivo = $nomeWebp;
+                $nomeImagem = $nomeWebp;
             }
 
         }
@@ -63,7 +63,7 @@ class Eventos extends BaseController
             'mapa_iframe' => $this->request->getPost('mapa_iframe'),
             'destaque' => $this->request->getPost('destaque') ?? 0,
             'publicado' => $this->request->getPost('publicado') ?? 0,
-            'imagem' => $arquivo
+            'imagem' => $nomeImagem
         ]);
 
         return redirect()->to('/admin/eventos');
@@ -100,7 +100,7 @@ class Eventos extends BaseController
                     ->convert(IMAGETYPE_WEBP)
                     ->save($caminho, 80);
 
-                $arquivo = $nomeWebp;
+                $nomeImagem = $nomeWebp;
             }
         }
 
