@@ -38,7 +38,28 @@
                 <li class="nav-item">
                     <a href="<?= base_url('admin/produtos') ?>" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
-                        <p>Loja</p>
+                        <p>Produtos</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/categorias') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>Categorias</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/pedidos') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-box"></i>
+                        <p>Pedidos</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/relatorios/vendas') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Relatório de vendas</p>
                     </a>
                 </li>
 
