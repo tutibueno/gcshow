@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\EventoModel;
 use App\Models\GaleriaModel;
+use App\Models\InstitucionalModel;
 
 class Home extends BaseController
 {
@@ -11,6 +12,7 @@ class Home extends BaseController
     {
         $eventoModel = new EventoModel();
         $galeriaModel = new GaleriaModel();
+        $institucionalModel = new InstitucionalModel();
 
         // Próximo evento
         $data['proximo_evento'] = $eventoModel
@@ -31,6 +33,8 @@ class Home extends BaseController
             ->orderBy('id', 'DESC')
             ->limit(10)
             ->findAll();
+
+        $data['institucional'] = $institucionalModel->first();
 
         return view('home', $data);
     }

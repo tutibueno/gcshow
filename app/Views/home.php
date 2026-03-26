@@ -1,5 +1,15 @@
 <?= $this->include('layout/header') ?>
 
+<?php
+$quemSomos = trim($institucional['quem_somos'] ?? '');
+$contatos = trim($institucional['contatos'] ?? '');
+$telefoneWhatsapp = trim($institucional['telefone_whatsapp'] ?? '');
+$instagramUrl = trim($institucional['instagram_url'] ?? '');
+$facebookUrl = trim($institucional['facebook_url'] ?? '');
+$youtubeUrl = trim($institucional['youtube_url'] ?? '');
+$temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !== '';
+?>
+
 <main class="home-content">
 
     <?php if ($proximo_evento): ?>
@@ -105,24 +115,55 @@
     </section>
 
     <!-- QUEM SOMOS -->
-    <section class="content-section" id="quem-somos">
-        <h2 class="section-title">Quem somos</h2>
-        <p>Texto institucional aqui...</p>
-    </section>
+    <?php if ($quemSomos !== ''): ?>
+        <section class="content-section institutional-card" id="quem-somos">
+            <div class="section-heading">
+                <h2 class="section-title">Quem somos</h2>
+                <a href="<?= base_url('sobre') ?>" class="section-link">Ver página Sobre</a>
+            </div>
+            <div class="institutional-text"><?= nl2br(esc($quemSomos)) ?></div>
+        </section>
+    <?php endif; ?>
 
-    <!-- CONTATO -->
-    <section class="content-section" id="contato">
-        <h2 class="section-title">Contato</h2>
-        <p class="contact-text">Fale conosco.</p>
-        <a
-            href="https://wa.me/5511981824614"
-            class="whatsapp-button"
-            target="_blank"
-            rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            Wilmers Eventos
-        </a>
-    </section>
+    <?php if ($contatos !== ''): ?>
+        <section class="content-section institutional-card" id="contato">
+            <h2 class="section-title">Contato</h2>
+            <div class="institutional-text"><?= nl2br(esc($contatos)) ?></div>
+
+            <?php if ($telefoneWhatsapp !== ''): ?>
+                <div class="contact-actions">
+                    <a
+                        href="https://wa.me/<?= preg_replace('/\D+/', '', $telefoneWhatsapp) ?>"
+                        class="whatsapp-button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($temRedesSociais): ?>
+                <div class="social-links">
+                    <?php if ($instagramUrl !== ''): ?>
+                        <a href="<?= esc($instagramUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-instagram" aria-label="Instagram">
+                            <img src="<?= base_url('public/img/Instagram.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($facebookUrl !== ''): ?>
+                        <a href="<?= esc($facebookUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-facebook" aria-label="Facebook">
+                            <img src="<?= base_url('public/img/Facebook.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($youtubeUrl !== ''): ?>
+                        <a href="<?= esc($youtubeUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-youtube" aria-label="YouTube">
+                            <img src="<?= base_url('public/img/Youtube.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        </a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </section>
+    <?php endif; ?>
 
 </main>
 

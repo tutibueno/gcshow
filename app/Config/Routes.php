@@ -10,6 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/welcome', 'Home::welcome');
 $routes->get('/homeold', 'Home::homeold');
+$routes->get('/sobre', 'Institucional::index');
 
 // EVENTOS PUBLICO
 $routes->get('/eventos', 'Eventos::index');
@@ -40,7 +41,10 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->get('galeria', 'Admin\Galeria::index');
     $routes->post('galeria/salvar', 'Admin\Galeria::salvar');
     $routes->get('galeria/excluir/(:num)', 'Admin\Galeria::excluir/$1');
+
+    // Institucional
+    $routes->get('institucional', 'Admin\Institucional::index');
+    $routes->post('institucional/salvar', 'Admin\Institucional::salvar');
 });
 
 //Eventos
-

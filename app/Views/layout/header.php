@@ -34,7 +34,7 @@
             <ul class="site-menu">
                 <li><a class="<?= $uri->getSegment(1) == '' ? 'active' : '' ?>" href="<?= base_url('/') ?>">Home</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'eventos' ? 'active' : '' ?>" href="<?= base_url('eventos') ?>">Eventos</a></li>
-                <li><a class="<?= $uri->getSegment(1) == 'historia' ? 'active' : '' ?>" href="<?= base_url('historia') ?>">História</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'sobre' ? 'active' : '' ?>" href="<?= base_url('sobre') ?>">Sobre</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'galeria' ? 'active' : '' ?>" href="<?= base_url('galeria') ?>">Galeria</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'loja' ? 'active' : '' ?>" href="<?= base_url('loja') ?>">Loja</a></li>
             </ul>

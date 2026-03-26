@@ -138,6 +138,28 @@ html {
     scroll-margin-top: calc(var(--header-height) - 30px);
 }
 
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.section-heading .section-title {
+    margin-bottom: 0;
+}
+
+.section-link {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.section-link:hover {
+    text-decoration: underline;
+}
+
 .contact-text {
     margin: 0 0 16px;
     line-height: 1.6;
@@ -202,6 +224,73 @@ html {
 .news-card p {
     margin: 0;
     line-height: 1.55;
+}
+
+.institutional-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.institutional-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #374151;
+}
+
+.contact-actions {
+    margin-top: 22px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.social-button-icon {
+    width: 44px;
+    height: 44px;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.05);
+}
+
+.social-links a:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.22);
+    outline-offset: 3px;
+}
+
+.social-links a {
+    min-height: 48px;
+}
+
+.institutional-intro {
+    margin: 0;
+    max-width: 720px;
+    color: #4b5563;
+    line-height: 1.7;
 }
 
 .gallery-carousel {
@@ -542,6 +631,11 @@ html {
 
     .gallery-carousel {
         grid-auto-columns: minmax(250px, 90%);
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .gallery-slide img {
