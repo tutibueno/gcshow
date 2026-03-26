@@ -5,7 +5,7 @@
 
     <div class="sidebar">
         <nav>
-            <ul class="nav nav-pills nav-sidebar flex-column">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" data-accordion="false" role="menu">
 
                 <li class="nav-item">
                     <a href="<?= base_url('admin/dashboard') ?>" class="nav-link">
@@ -35,32 +35,43 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/produtos') ?>" class="nav-link">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
-                        <p>Produtos</p>
+                        <p>
+                            Loja
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
-                </li>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/produtos') ?>" class="nav-link">
+                                <i class="fas fa-box-open nav-icon"></i>
+                                <p>Produtos</p>
+                            </a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/categorias') ?>" class="nav-link">
-                        <i class="nav-icon fas fa-tags"></i>
-                        <p>Categorias</p>
-                    </a>
-                </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/categorias') ?>" class="nav-link">
+                                <i class="fas fa-tags nav-icon"></i>
+                                <p>Categorias</p>
+                            </a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/pedidos') ?>" class="nav-link">
-                        <i class="nav-icon fas fa-box"></i>
-                        <p>Pedidos</p>
-                    </a>
-                </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/pedidos') ?>" class="nav-link">
+                                <i class="fas fa-receipt nav-icon"></i>
+                                <p>Pedidos</p>
+                            </a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/relatorios/vendas') ?>" class="nav-link">
-                        <i class="nav-icon fas fa-chart-line"></i>
-                        <p>Relatório de vendas</p>
-                    </a>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/relatorios/vendas') ?>" class="nav-link">
+                                <i class="fas fa-chart-line nav-icon"></i>
+                                <p>Relatório de vendas</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>

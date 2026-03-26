@@ -38,16 +38,16 @@
                             <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
                         </p>
 
-                        <?php if ($evento['ingressos_url']): ?>
-                            <a href="<?= $evento['ingressos_url'] ?>" target="_blank" class="btn btn-success" style="margin-top:8px;">
-                                <?= $evento['ingressos_texto'] ?: 'Comprar ingressos' ?>
-                            </a>
-                        <?php endif; ?>
-                        <p>
+                        <div class="event-card-actions">
+                            <?php if ($evento['ingressos_url']): ?>
+                                <a href="<?= $evento['ingressos_url'] ?>" target="_blank" class="btn btn-success">
+                                    <?= $evento['ingressos_texto'] ?: 'Comprar ingressos' ?>
+                                </a>
+                            <?php endif; ?>
                             <a href="<?= base_url('evento/' . $evento['id']) ?>" class="btn btn-primary">
                                 Ver detalhes
                             </a>
-                        </p>
+                        </div>
 
                     </div>
                 <?php endforeach; ?>
@@ -93,9 +93,11 @@
                             <?= $evento['cidade'] ?>/<?= $evento['estado'] ?>
                         </p>
 
-                        <a href="<?= base_url('evento/' . $evento['id']) ?>" class="btn btn-secondary">
-                            Ver detalhes
-                        </a>
+                        <div class="event-card-actions">
+                            <a href="<?= base_url('evento/' . $evento['id']) ?>" class="btn btn-secondary">
+                                Ver detalhes
+                            </a>
+                        </div>
 
                     </div>
                 <?php endforeach; ?>

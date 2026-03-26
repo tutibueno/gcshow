@@ -209,6 +209,9 @@ html {
     padding: 20px;
     border: 1px solid #e5e7eb;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .news-card:hover {
@@ -224,6 +227,13 @@ html {
 .news-card p {
     margin: 0;
     line-height: 1.55;
+}
+
+.event-card-actions {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .institutional-card {
@@ -670,6 +680,11 @@ html {
 
 .btn-success {
     background: #16a34a;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #475569;
     color: #fff;
 }
 
