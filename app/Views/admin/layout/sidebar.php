@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="<?= base_url('admin/dashboard') ?>" class="brand-link">
-        <span class="brand-text font-weight-light">Admin</span>
+        <span class="brand-text font-weight-light">GCShow Admin</span>
     </a>
 
     <div class="sidebar">
