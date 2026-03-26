@@ -30,6 +30,22 @@ class Eventos extends BaseController
         if ($imagem && $imagem->isValid()) {
             $nomeImagem = $imagem->getRandomName();
             $imagem->move('uploads/eventos', $nomeImagem);
+
+            if ($imagem && $imagem->isValid()) {
+
+                $nomeWebp = uniqid() . '.webp';
+                $caminho = 'uploads/galeria/' . $nomeWebp;
+
+                // Converter para WEBP
+                $image = \Config\Services::image()
+                    ->withFile($imagem)
+                    ->fit(1920, 800, 'center')
+                    ->convert(IMAGETYPE_WEBP)
+                    ->save($caminho, 80);
+
+                $arquivo = $nomeWebp;
+            }
+
         }
 
         $model->save([
@@ -47,7 +63,7 @@ class Eventos extends BaseController
             'mapa_iframe' => $this->request->getPost('mapa_iframe'),
             'destaque' => $this->request->getPost('destaque') ?? 0,
             'publicado' => $this->request->getPost('publicado') ?? 0,
-            'imagem' => $nomeImagem
+            'imagem' => $arquivo
         ]);
 
         return redirect()->to('/admin/eventos');
@@ -71,6 +87,21 @@ class Eventos extends BaseController
         if ($imagem && $imagem->isValid()) {
             $nomeImagem = $imagem->getRandomName();
             $imagem->move('uploads/eventos', $nomeImagem);
+
+            if ($imagem && $imagem->isValid()) {
+
+                $nomeWebp = uniqid() . '.webp';
+                $caminho = 'uploads/galeria/' . $nomeWebp;
+
+                // Converter para WEBP
+                $image = \Config\Services::image()
+                    ->withFile($imagem)
+                    ->fit(1920, 800, 'center')
+                    ->convert(IMAGETYPE_WEBP)
+                    ->save($caminho, 80);
+
+                $arquivo = $nomeWebp;
+            }
         }
 
         $model->update($id, [

@@ -2,11 +2,46 @@
 
 <main class="home-content">
 
-    <!-- QUEM SOMOS -->
-    <section class="content-section" id="quem-somos">
-        <h2 class="section-title">Quem somos</h2>
-        <p>Texto institucional aqui...</p>
-    </section>
+    <?php if ($proximo_evento): ?>
+
+        <?php
+        $banner = !empty($proximo_evento['imagem'])
+            ? base_url('uploads/eventos/' . $proximo_evento['imagem'])
+            : base_url('public/banner_padrao.jpg');
+        ?>
+
+        <section class="hero" style="background-image: url('<?= $banner ?>');">
+            <div class="hero-content">
+
+                <h1><?= $proximo_evento['titulo'] ?></h1>
+
+                <p class="hero-date">
+                    <?= periodoResumido($proximo_evento['data_inicio'], $proximo_evento['data_fim']) ?>
+                    • <?= $proximo_evento['cidade'] ?>/<?= $proximo_evento['estado'] ?>
+                </p>
+
+                <div id="countdown"
+                    data-date="<?= $proximo_evento['data_inicio'] ?>"
+                    data-time="<?= $proximo_evento['hora_inicio'] ?>">
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="<?= base_url('evento/' . $proximo_evento['id']) ?>" class="btn btn-primary">
+                        Ver evento
+                    </a>
+
+                    <?php if ($proximo_evento['ingressos_url']): ?>
+                        <a href="<?= $proximo_evento['ingressos_url'] ?>" target="_blank" class="btn btn-success">
+                            <?= $proximo_evento['ingressos_texto'] ?: 'Comprar ingressos' ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+
+            </div>
+
+        </section>
+
+    <?php endif; ?>
 
     <!-- EVENTOS -->
     <section class="content-section" id="eventos">
@@ -69,6 +104,12 @@
         </div>
     </section>
 
+    <!-- QUEM SOMOS -->
+    <section class="content-section" id="quem-somos">
+        <h2 class="section-title">Quem somos</h2>
+        <p>Texto institucional aqui...</p>
+    </section>
+
     <!-- CONTATO -->
     <section class="content-section" id="contato">
         <h2 class="section-title">Contato</h2>
@@ -84,5 +125,40 @@
     </section>
 
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const countdown = document.getElementById("countdown");
+        if (!countdown) return;
+
+        const eventDate = countdown.getAttribute("data-date");
+        const eventTime = countdown.getAttribute("data-time");
+
+        const targetDate = new Date(eventDate + "T" + eventTime).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                countdown.innerHTML = "Evento em andamento!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            countdown.innerHTML =
+                "<div class='countdown-box'>" + days + "<span>dias</span></div>" +
+                "<div class='countdown-box'>" + hours + "<span>h</span></div>" +
+                "<div class='countdown-box'>" + minutes + "<span>min</span></div>";
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    });
+</script>
 
 <?= $this->include('layout/footer') ?>

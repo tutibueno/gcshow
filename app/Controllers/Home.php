@@ -12,11 +12,18 @@ class Home extends BaseController
         $eventoModel = new EventoModel();
         $galeriaModel = new GaleriaModel();
 
-        $data['eventos'] = $eventoModel
-            ->where('data_fim >=', date('Y-m-d'))
+        // Próximo evento
+        $data['proximo_evento'] = $eventoModel
+            ->where('data_inicio >=', date('Y-m-d'))
             ->where('publicado', 1)
             ->orderBy('data_inicio', 'ASC')
-            ->limit(3)
+            ->first();
+
+        $data['eventos'] = $eventoModel
+            ->where('data_inicio >=', date('Y-m-d'))
+            ->where('publicado', 1)
+            ->orderBy('data_inicio', 'ASC')
+            ->limit(10)
             ->find();
 
         $data['galeria_destaque'] = $galeriaModel

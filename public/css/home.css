@@ -20,9 +20,16 @@ body {
     padding-top: var(--header-height);
     background: var(--bg);
     color: var(--text);
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
 }
 
 html {
@@ -112,7 +119,9 @@ html {
 
 .home-content {
     flex: 1;
-    padding: 40px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
@@ -121,10 +130,11 @@ html {
 .section-title {
     margin: 0 0 18px;
     font-size: 28px;
+    margin-bottom: 24px;
 }
 
 .content-section {
-    margin-bottom: 42px;
+    margin-bottom: 80px;
     scroll-margin-top: calc(var(--header-height) - 30px);
 }
 
@@ -172,10 +182,16 @@ html {
 }
 
 .news-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
+    background: #fff;
+    border-radius: 12px;
     padding: 20px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .news-card h3 {
@@ -371,6 +387,80 @@ html {
     color: var(--accent);
     border-bottom: 2px solid var(--accent);
     padding-bottom: 4px;
+}
+
+.hero {
+    padding: 140px 24px;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-date {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-success {
+    background: #16a34a;
+    color: #fff;
+}
+
+#countdown {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 70px;
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 @media (max-width: 768px) {
