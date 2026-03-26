@@ -45,36 +45,40 @@
         </div>
     <?php endif; ?>
 
-    <h3>Galeria</h3>
+    <?php if ($galeria): ?>
 
-    <div class="gallery-carousel">
+        <h3>Galeria</h3>
 
-        <?php foreach ($galeria as $item): ?>
+        <div class="gallery-carousel">
 
-            <?php if ($item['tipo'] == 'foto'): ?>
-                <figure class="gallery-slide">
-                    <a href="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>"
-                        class="glightbox"
-                        data-gallery="evento"
-                        data-title="<?= esc($item['titulo']) ?>">
+            <?php foreach ($galeria as $item): ?>
 
-                        <img src="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>">
-                    </a>
-                </figure>
-            <?php else: ?>
-                <div class="gallery-slide">
-                    <a href="<?= $item['video_url'] ?>"
-                        class="glightbox"
-                        data-gallery="evento">
+                <?php if ($item['tipo'] == 'foto'): ?>
+                    <figure class="gallery-slide">
+                        <a href="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>"
+                            class="glightbox"
+                            data-gallery="evento"
+                            data-title="<?= esc($item['titulo']) ?>">
 
-                        <img src="https://img.youtube.com/vi/<?= getYouTubeId($item['video_url']) ?>/hqdefault.jpg">
-                    </a>
-                </div>
-            <?php endif; ?>
+                            <img src="<?= base_url('uploads/galeria/' . $item['arquivo']) ?>">
+                        </a>
+                    </figure>
+                <?php else: ?>
+                    <div class="gallery-slide">
+                        <a href="<?= $item['video_url'] ?>"
+                            class="glightbox"
+                            data-gallery="evento">
 
-        <?php endforeach; ?>
+                            <img src="https://img.youtube.com/vi/<?= getYouTubeId($item['video_url']) ?>/hqdefault.jpg">
+                        </a>
+                    </div>
+                <?php endif; ?>
 
-    </div>
+            <?php endforeach; ?>
+
+        </div>
+
+    <?php endif; ?>
 
 </div>
 

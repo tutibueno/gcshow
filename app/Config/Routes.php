@@ -16,6 +16,7 @@ $routes->get('/sobre', 'Institucional::index');
 $routes->get('/eventos', 'Eventos::index');
 $routes->get('/eventos/anteriores', 'Eventos::anteriores');
 $routes->get('/evento/(:num)', 'Eventos::detalhes/$1');
+$routes->get('/galeria', 'Galeria::index');
 
 // LOGIN
 $routes->get('/admin', 'Admin\Login::index');
