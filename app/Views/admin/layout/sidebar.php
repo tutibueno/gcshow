@@ -35,6 +35,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/newsletter') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-envelope"></i>
+                        <p>Newsletter</p>
+                    </a>
+                </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
