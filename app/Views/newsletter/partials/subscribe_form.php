@@ -24,7 +24,7 @@
 
             <div class="newsletter-actions">
                 <button type="submit" class="btn btn-success">Inscrever-se</button>
-                <a href="<?= base_url('newsletter') ?>" class="btn btn-primary">Abrir página da newsletter</a>
+                <!-- <a href="<?= base_url('newsletter') ?>" class="btn btn-primary">Abrir página da newsletter</a> -->
             </div>
         </form>
     </div>

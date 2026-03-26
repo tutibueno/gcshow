@@ -1,7 +1,3 @@
-<?php if (service('uri')->getSegment(1) !== 'newsletter'): ?>
-    <?= view('newsletter/partials/subscribe_form') ?>
-<?php endif; ?>
-
 <footer class="site-footer">
     &copy; <?= date('Y') ?> <strong>Game Collection Show</strong>
 

@@ -4,13 +4,31 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\EventoModel;
+use App\Models\GaleriaModel;
 
 class Eventos extends BaseController
 {
     public function index()
     {
         $model = new EventoModel();
-        $data['eventos'] = $model->orderBy('data_inicio', 'DESC')->findAll();
+        $eventos = $model->orderBy('data_inicio', 'DESC')->findAll();
+
+        $fotosPorEvento = [];
+        $totaisGaleria = (new GaleriaModel())
+            ->select('evento_id, COUNT(*) as total_fotos')
+            ->groupBy('evento_id')
+            ->findAll();
+
+        foreach ($totaisGaleria as $item) {
+            $fotosPorEvento[(int) $item['evento_id']] = (int) $item['total_fotos'];
+        }
+
+        foreach ($eventos as &$evento) {
+            $evento['total_fotos'] = $fotosPorEvento[(int) $evento['id']] ?? 0;
+        }
+        unset($evento);
+
+        $data['eventos'] = $eventos;
 
         return view('admin/eventos/index', $data);
     }

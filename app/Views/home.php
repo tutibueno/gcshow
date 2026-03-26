@@ -165,6 +165,8 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
         </section>
     <?php endif; ?>
 
+    <?= view('newsletter/partials/subscribe_form') ?>
+
 </main>
 
 <script>
