@@ -2,9 +2,23 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Admin</title>
     <link rel="stylesheet" href="<?= base_url('public/adminlte/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('public/adminlte/dist/css/adminlte.min.css') ?>">
+    <style>
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .login-logo {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
