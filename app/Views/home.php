@@ -37,7 +37,7 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
 
                 <div class="hero-buttons">
                     <a href="<?= base_url('evento/' . $proximo_evento['id']) ?>" class="btn btn-primary">
-                        Ver evento
+                        Ver Evento
                     </a>
 
                     <?php if ($proximo_evento['ingressos_url']): ?>
