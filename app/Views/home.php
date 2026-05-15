@@ -30,8 +30,7 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
                     • <?= $proximo_evento['cidade'] ?>/<?= $proximo_evento['estado'] ?>
                 </p>
 
-                <div id="countdown"
-                    data-date="<?= $proximo_evento['data_inicio'] ?>"
+                <div id="countdown" data-date="<?= $proximo_evento['data_inicio'] ?>"
                     data-time="<?= $proximo_evento['hora_inicio'] ?>">
                 </div>
 
@@ -92,9 +91,7 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
             <?php foreach ($galeria_destaque as $foto): ?>
                 <?php if ($foto['tipo'] == 'foto'): ?>
                     <figure class="gallery-slide">
-                        <a href="<?= base_url('uploads/galeria/' . $foto['arquivo']) ?>"
-                            class="glightbox"
-                            data-gallery="home"
+                        <a href="<?= base_url('uploads/galeria/' . $foto['arquivo']) ?>" class="glightbox" data-gallery="home"
                             data-title="<?= esc($foto['titulo'] ?? '') ?>">
 
                             <img src="<?= base_url('uploads/galeria/' . $foto['arquivo']) ?>">
@@ -102,15 +99,32 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
                     </figure>
                 <?php else: ?>
                     <div class="gallery-slide">
-                        <a href="<?= $foto['video_url'] ?>"
-                            class="glightbox"
-                            data-gallery="evento">
+                        <a href="<?= $foto['video_url'] ?>" class="glightbox" data-gallery="evento">
 
                             <img src="https://img.youtube.com/vi/<?= getYouTubeId($foto['video_url']) ?>/hqdefault.jpg">
                         </a>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="content-section" id="instagram">
+
+        <h2 class="section-title">Nosso Instagram</h2>
+        <div class="section-heading">
+
+            <behold-widget feed-id="LecPiwmEVfVJMfx5Ik9G"></behold-widget>
+            <script>
+                (() => {
+                    const d = document,
+                        s = d.createElement("script");
+                    s.type = "module";
+                    s.src = "https://w.behold.so/widget.js";
+                    d.head.append(s);
+                })();
+            </script>
         </div>
     </section>
 
@@ -132,11 +146,8 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
 
             <?php if ($telefoneWhatsapp !== ''): ?>
                 <div class="contact-actions">
-                    <a
-                        href="https://wa.me/<?= preg_replace('/\D+/', '', $telefoneWhatsapp) ?>"
-                        class="whatsapp-button"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                    <a href="https://wa.me/<?= preg_replace('/\D+/', '', $telefoneWhatsapp) ?>" class="whatsapp-button"
+                        target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         Falar no WhatsApp
                     </a>
@@ -146,18 +157,24 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
             <?php if ($temRedesSociais): ?>
                 <div class="social-links">
                     <?php if ($instagramUrl !== ''): ?>
-                        <a href="<?= esc($instagramUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-instagram" aria-label="Instagram">
-                            <img src="<?= base_url('public/img/Instagram.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        <a href="<?= esc($instagramUrl) ?>" target="_blank" rel="noopener noreferrer"
+                            class="social-button social-button-instagram" aria-label="Instagram">
+                            <img src="<?= base_url('public/img/Instagram.svg') ?>" alt="" class="social-button-icon"
+                                aria-hidden="true">
                         </a>
                     <?php endif; ?>
                     <?php if ($facebookUrl !== ''): ?>
-                        <a href="<?= esc($facebookUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-facebook" aria-label="Facebook">
-                            <img src="<?= base_url('public/img/Facebook.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        <a href="<?= esc($facebookUrl) ?>" target="_blank" rel="noopener noreferrer"
+                            class="social-button social-button-facebook" aria-label="Facebook">
+                            <img src="<?= base_url('public/img/Facebook.svg') ?>" alt="" class="social-button-icon"
+                                aria-hidden="true">
                         </a>
                     <?php endif; ?>
                     <?php if ($youtubeUrl !== ''): ?>
-                        <a href="<?= esc($youtubeUrl) ?>" target="_blank" rel="noopener noreferrer" class="social-button social-button-youtube" aria-label="YouTube">
-                            <img src="<?= base_url('public/img/Youtube.svg') ?>" alt="" class="social-button-icon" aria-hidden="true">
+                        <a href="<?= esc($youtubeUrl) ?>" target="_blank" rel="noopener noreferrer"
+                            class="social-button social-button-youtube" aria-label="YouTube">
+                            <img src="<?= base_url('public/img/Youtube.svg') ?>" alt="" class="social-button-icon"
+                                aria-hidden="true">
                         </a>
                     <?php endif; ?>
                 </div>
