@@ -17,6 +17,7 @@ $routes->get('/eventos', 'Eventos::index');
 $routes->get('/eventos/anteriores', 'Eventos::anteriores');
 $routes->get('/evento/(:num)', 'Eventos::detalhes/$1');
 $routes->get('/galeria', 'Galeria::index');
+$routes->get('/parceiros', 'Parceiros::index');
 $routes->get('/loja', 'Loja::index');
 $routes->get('/loja/produto/(:segment)', 'Loja::detalhes/$1');
 $routes->get('/loja/carrinho', 'Loja::carrinho');
@@ -82,6 +83,15 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->get('newsletter/export', 'Admin\Newsletter::exportCsv');
     $routes->post('newsletter/status/(:num)', 'Admin\Newsletter::updateStatus/$1');
     $routes->get('newsletter/delete/(:num)', 'Admin\Newsletter::delete/$1');
+
+    // Parceiros
+    $routes->get('parceiros', 'Admin\Parceiros::index');
+    $routes->get('parceiros/criar', 'Admin\Parceiros::criar');
+    $routes->post('parceiros/salvar', 'Admin\Parceiros::salvar', ['filter' => 'csrf']);
+    $routes->get('parceiros/editar/(:num)', 'Admin\Parceiros::editar/$1');
+    $routes->post('parceiros/atualizar/(:num)', 'Admin\Parceiros::atualizar/$1', ['filter' => 'csrf']);
+    $routes->post('parceiros/toggle/(:num)', 'Admin\Parceiros::toggle/$1', ['filter' => 'csrf']);
+    $routes->post('parceiros/excluir/(:num)', 'Admin\Parceiros::excluir/$1', ['filter' => 'csrf']);
 });
 
 //Eventos

@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('public/favicon-32x32.png') ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('public/favicon-16x16.png') ?>">
     <link rel="manifest" href="<?= base_url('public/site.webmanifest') ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="<?= base_url('public/css/home.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -45,6 +46,7 @@
                 <li><a class="<?= $uri->getSegment(1) == 'eventos' ? 'active' : '' ?>" href="<?= base_url('eventos') ?>">Eventos</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'sobre' ? 'active' : '' ?>" href="<?= base_url('sobre') ?>">Sobre</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'galeria' ? 'active' : '' ?>" href="<?= base_url('galeria') ?>">Galeria</a></li>
+                <li><a class="<?= $uri->getSegment(1) == 'parceiros' ? 'active' : '' ?>" href="<?= base_url('parceiros') ?>">Parceiros</a></li>
                 <li><a class="<?= $uri->getSegment(1) == 'loja' ? 'active' : '' ?>" href="<?= base_url('loja') ?>">Loja</a></li>
             </ul>
 

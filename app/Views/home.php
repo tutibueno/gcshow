@@ -109,6 +109,8 @@ $temRedesSociais = $instagramUrl !== '' || $facebookUrl !== '' || $youtubeUrl !=
         </div>
     </section>
 
+    <?= view('frontend/parceiros/_premium_home', ['parceirosPremium' => $parceirosPremium ?? []]) ?>
+
     <!-- INSTAGRAM -->
     <section class="content-section" id="instagram">
 

@@ -29,6 +29,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="<?= base_url('admin/parceiros') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-handshake"></i>
+                        <p>Parceiros</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="<?= base_url('admin/institucional') ?>" class="nav-link">
                         <i class="nav-icon fas fa-building"></i>
                         <p>Institucional</p>
